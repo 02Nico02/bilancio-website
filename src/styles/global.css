@@ -161,6 +161,25 @@ summary:focus-visible {
   background: var(--color-primary-hover);
 }
 
+.site-header__login {
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-header__login:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
 .mobile-navigation {
   display: none;
 }
@@ -231,6 +250,10 @@ h1 {
     display: block;
   }
 
+  .site-header__login {
+    display: none;
+  }
+
   .mobile-navigation summary {
     min-height: 2.75rem;
     padding: 0.7rem 0.75rem;
@@ -266,6 +289,13 @@ h1 {
     padding: 0.75rem;
     border-radius: 0.25rem;
   }
+
+  .mobile-navigation nav .mobile-navigation__login {
+    margin-block-start: 0.25rem;
+    border-block-start: 1px solid var(--color-border);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
 }
 
 @media (max-width: 40rem) {
@@ -275,7 +305,7 @@ h1 {
     gap: 0.5rem;
   }
 
-  .site-header__login {
+  .site-header__register {
     min-height: 2.5rem;
     padding-inline: 0.7rem;
     font-size: 0.8rem;

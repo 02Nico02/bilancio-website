@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '../assets/brand/logo-bilancio.png';
+import { AUTH_URLS } from '../config/auth';
 
 const navigation = [
   { href: '/', label: 'Inicio' },
@@ -9,7 +10,6 @@ const navigation = [
   { href: '/como-funciona/', label: 'Cómo funciona' },
 ];
 
-const appUrl = 'https://app.bilancioapp.com';
 ---
 
 <header class="site-header">
@@ -26,9 +26,13 @@ const appUrl = 'https://app.bilancioapp.com';
       <summary>Menú</summary>
       <nav aria-label="Principal">
         {navigation.map((item) => <a href={item.href}>{item.label}</a>)}
+        <a class="mobile-navigation__login" href={AUTH_URLS.login}>Ingresar</a>
       </nav>
     </details>
 
-    <a class="button button--primary site-header__login" href={appUrl}>Ingresar</a>
+    <nav class="site-header__actions" aria-label="Acceso a Bilancio">
+      <a class="site-header__login" href={AUTH_URLS.login}>Ingresar</a>
+      <a class="button button--primary site-header__register" href={AUTH_URLS.register}>Crear cuenta</a>
+    </nav>
   </div>
 </header>

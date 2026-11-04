@@ -2,7 +2,7 @@
 
 ## Propósito
 
-La website presenta Bilancio como un producto de gestión financiera personal, explica sus capacidades reales y dirige a la aplicación autenticada cuando el flujo correspondiente esté verificado. Es una superficie comercial independiente: no consulta datos financieros ni ejecuta operaciones.
+La website presenta Bilancio como un producto de gestión financiera personal, explica sus capacidades reales y dirige a la aplicación autenticada. Es una superficie comercial independiente: no consulta datos financieros ni ejecuta operaciones.
 
 ## Público y posicionamiento
 
@@ -56,9 +56,9 @@ Inversiones es una capacidad privada, disponible únicamente para el propietario
 
 ## Conversión y límites de claims
 
-El frontend contiene las rutas [`/login` y `/registro`](https://github.com/02Nico02/bilancio-frontend/blob/main/src/app/app.routes.ts); el [código](https://github.com/02Nico02/bilancio-frontend/blob/main/src/app/features/auth/register-page.component.ts) y sus [tests](https://github.com/02Nico02/bilancio-frontend/blob/main/src/app/features/auth/register-page.component.spec.ts) contemplan `registration_disabled` y aprobación pendiente. Esto no determina qué estado está habilitado en producción. Verificar deep links, comportamiento del backend y estado del entorno en [website #5](https://github.com/02Nico02/bilancio-website/issues/5). Toda apertura pública requiere la decisión posterior a la auditoría de [website #6](https://github.com/02Nico02/bilancio-website/issues/6).
+La website ofrece siempre **Crear cuenta** en `https://app.bilancioapp.com/registro` y **Ingresar** en `https://app.bilancioapp.com/login`. Ambas rutas se verificaron en [Angular](https://github.com/02Nico02/bilancio-frontend/blob/develop/src/app/app.routes.ts) y mediante navegación directa al entorno productivo el 4 de noviembre de 2026. Los usuarios con sesión iniciada son redirigidos por `guestOnlyGuard` a `/dashboard`, según la [guardia](https://github.com/02Nico02/bilancio-frontend/blob/develop/src/app/core/auth/auth.guards.ts) y sus [tests](https://github.com/02Nico02/bilancio-frontend/blob/develop/src/app/core/auth/auth.guards.spec.ts).
 
-Hasta entonces, no publicar una ruta como contrato comercial ni asegurar que el registro está abierto. Los CTA de autenticación van al frontend `app.bilancioapp.com`, nunca a la API. No usar «Solicitar acceso» sin un mecanismo real y verificado.
+La elección de estos CTA no habilita el registro en backend ni modifica la aprobación administrativa. Angular y backend informan si el registro está deshabilitado o si una cuenta requiere aprobación. La website no determina el estado de una cuenta, no implementa autenticación y no promete acceso inmediato tras completar el formulario. No crear beta, lista de espera ni «Solicitar acceso» sin un mecanismo real. La apertura pública del servicio sigue siendo una decisión operativa separada, posterior a [website #6](https://github.com/02Nico02/bilancio-website/issues/6).
 
 No presentar como decisiones aprobadas precios, planes, gratuidad permanente, políticas legales, analítica, integraciones futuras, automatizaciones, promesas de seguridad no verificadas ni apertura pública. Algunas referencias de Stitch contienen textos sobre planes gratuitos, comisiones, «100%» de exactitud, mínima cantidad de pagos, inversiones o promesas de privacidad; esos textos son contenido de mockup, no claims aprobados. No reutilizarlos sin decisión y evidencia independientes.
 

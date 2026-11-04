@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { AUTH_URLS } from '../config/auth';
 import '../styles/product-pages.css';
 
 const description =
@@ -26,7 +27,7 @@ const groupSteps = [
           Bilancio te ayuda a registrar tus movimientos cotidianos y a organizar gastos con otras personas desde la misma aplicación.
         </p>
         <div class="product-hero__actions">
-          <a class="button button--primary" href="https://app.bilancioapp.com">Ingresar a Bilancio</a>
+          <a class="button button--primary" href={AUTH_URLS.register}>Crear cuenta</a>
           <a class="text-link" href="#dos-formas">Descubrí el recorrido <span aria-hidden="true">↓</span></a>
         </div>
       </div>
@@ -83,7 +84,7 @@ const groupSteps = [
         <p class="eyebrow">Para empezar</p>
         <h2 id="how-start-title">Ingresá a Bilancio y elegí por dónde comenzar.</h2>
         <p>Desde la aplicación podés acceder a tus finanzas personales y a los grupos según los permisos disponibles para tu cuenta.</p>
-        <a class="button button--primary" href="https://app.bilancioapp.com">Ir a Bilancio</a>
+        <a class="button button--primary" href={AUTH_URLS.register}>Crear cuenta</a>
       </div>
     </section>
 
@@ -91,7 +92,7 @@ const groupSteps = [
       <p class="eyebrow">Cuentas más claras, día a día</p>
       <h2 id="how-cta-title">Conocé Bilancio.</h2>
       <p>Elegí la forma de organizar tus cuentas que tiene sentido para vos.</p>
-      <a class="button button--primary" href="https://app.bilancioapp.com">Ingresar a Bilancio</a>
+      <a class="button button--primary" href={AUTH_URLS.register}>Crear cuenta</a>
     </section>
   </div>
 </BaseLayout>

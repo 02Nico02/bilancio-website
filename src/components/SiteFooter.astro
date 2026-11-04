@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '../assets/brand/logo-bilancio.png';
+import { AUTH_URLS } from '../config/auth';
 
 const navigation = [
   { href: '/', label: 'Inicio' },
@@ -17,7 +18,8 @@ const navigation = [
     </a>
     <nav aria-label="Secundaria">
       {navigation.map((item) => <a href={item.href}>{item.label}</a>)}
-      <a href="https://app.bilancioapp.com">Ingresar</a>
+      <a href={AUTH_URLS.register}>Crear cuenta</a>
+      <a href={AUTH_URLS.login}>Ingresar</a>
     </nav>
   </div>
 </footer>
