@@ -1,5 +1,119 @@
 ---
-import ContentPlaceholder from '../components/ContentPlaceholder.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/product-pages.css';
+
+const description =
+  'Registrá ingresos y gastos, organizá cuentas y categorías, y volvé a tus movimientos con Bilancio. Cada moneda se mantiene por separado.';
+
+const benefits = [
+  {
+    number: '01',
+    title: 'Registrá lo que entra y sale',
+    description: 'Anotá tus ingresos y gastos para mantener un registro claro de los movimientos de cada día.',
+  },
+  {
+    number: '02',
+    title: 'Ordená cuentas y categorías',
+    description: 'Agrupá tus movimientos por cuenta y categoría para encontrar la información que buscás.',
+  },
+  {
+    number: '03',
+    title: 'Volvé a consultar tus movimientos',
+    description: 'Revisá los movimientos registrados en un mismo lugar y consultá su contexto cuando lo necesites.',
+  },
+];
 ---
 
-<ContentPlaceholder title="Finanzas personales" />
+<BaseLayout title="Finanzas personales: ingresos y gastos en orden" description={description}>
+  <div class="product-page personal-finance-page">
+    <section class="product-hero" aria-labelledby="finance-title">
+      <div class="product-hero__copy">
+        <p class="eyebrow">Finanzas personales</p>
+        <h1 id="finance-title">Entendé mejor tus movimientos.</h1>
+        <p class="product-hero__description">
+          Registrá ingresos y gastos, organizalos por cuenta y categoría, y consultá cómo se mueve tu dinero en cada moneda.
+        </p>
+        <div class="product-hero__actions">
+          <a class="button button--primary" href="https://app.bilancioapp.com">Ingresar a Bilancio</a>
+          <a class="text-link" href="#tu-informacion">Conocé qué podés organizar <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+
+      <figure class="finance-illustration" aria-labelledby="finance-illustration-title">
+        <div class="finance-illustration__heading">
+          <div>
+            <p class="finance-illustration__eyebrow">Movimientos · ejemplo</p>
+            <h2 id="finance-illustration-title">Un registro más claro</h2>
+          </div>
+          <span class="currency-pill">ARS</span>
+        </div>
+        <div class="finance-account"><span aria-hidden="true">◉</span><span>Cuenta principal</span><span>En pesos</span></div>
+        <ul class="finance-movements" aria-label="Movimientos sintéticos en pesos">
+          <li><span class="finance-movement__mark finance-movement__mark--income" aria-hidden="true">↗</span><span class="finance-movement__copy"><strong>Honorarios</strong><small>Ingreso · Trabajo</small></span><strong class="finance-amount finance-amount--income">+ ARS 650.000</strong></li>
+          <li><span class="finance-movement__mark" aria-hidden="true">↘</span><span class="finance-movement__copy"><strong>Alquiler</strong><small>Gasto · Vivienda</small></span><strong class="finance-amount">− ARS 380.000</strong></li>
+          <li><span class="finance-movement__mark" aria-hidden="true">↘</span><span class="finance-movement__copy"><strong>Supermercado</strong><small>Gasto · Comida</small></span><strong class="finance-amount">− ARS 84.500</strong></li>
+        </ul>
+        <div class="finance-illustration__currencies" aria-label="Las monedas se consultan por separado">
+          <span><strong>ARS</strong> movimientos en pesos</span>
+          <span><strong>USD</strong> movimientos en dólares</span>
+        </div>
+        <figcaption>Ilustración conceptual · datos sintéticos · no es una captura de la aplicación.</figcaption>
+      </figure>
+    </section>
+
+    <section class="product-benefits" id="tu-informacion" aria-labelledby="finance-benefits-title">
+      <div class="product-section-heading">
+        <p class="eyebrow">Tus finanzas, a tu manera</p>
+        <h2 id="finance-benefits-title">De cada movimiento a una vista más ordenada.</h2>
+        <p>Una estructura sencilla para registrar, clasificar y volver a consultar tu información.</p>
+      </div>
+      <div class="product-benefit-grid">
+        {benefits.map((benefit) => (
+          <article class="product-benefit-card">
+            <span class="product-benefit-card__number">{benefit.number}</span>
+            <h3>{benefit.title}</h3>
+            <p>{benefit.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="product-details" aria-labelledby="finance-details-title">
+      <div class="product-details__intro">
+        <p class="eyebrow eyebrow--light">Cada cosa en su lugar</p>
+        <h2 id="finance-details-title">También podés registrar movimientos entre cuentas.</h2>
+        <p>Las transferencias entre cuentas propias y los cambios de moneda se registran como operaciones diferentes de un ingreso o un gasto.</p>
+      </div>
+      <div class="product-detail-list">
+        <article>
+          <span aria-hidden="true">↔</span>
+          <div><h3>Transferencias</h3><p>Dejá registro del movimiento de dinero entre cuentas en la misma moneda.</p></div>
+        </article>
+        <article>
+          <span aria-hidden="true">⇄</span>
+          <div><h3>Cambios de moneda</h3><p>Registrá lo que entregaste y recibiste, conservando cada importe en su moneda.</p></div>
+        </article>
+      </div>
+      <p class="product-details__note">ARS y USD se consultan por separado. Bilancio no combina monedas en un total convertido.</p>
+    </section>
+
+    <section class="product-steps" aria-labelledby="finance-steps-title">
+      <div class="product-section-heading product-section-heading--center">
+        <p class="eyebrow">Un hábito simple</p>
+        <h2 id="finance-steps-title">Registrá, organizá y volvé cuando lo necesites.</h2>
+      </div>
+      <ol class="product-steps__list">
+        <li><span>01</span><div><h3>Elegí una cuenta</h3><p>Ubicá el movimiento en la cuenta y moneda que corresponden.</p></div></li>
+        <li><span>02</span><div><h3>Anotá el movimiento</h3><p>Indicá si fue un ingreso o un gasto y agregá su categoría.</p></div></li>
+        <li><span>03</span><div><h3>Volvé al registro</h3><p>Consultá los movimientos que registraste y los detalles disponibles.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="product-final-cta" aria-labelledby="finance-cta-title">
+      <p class="eyebrow">Más claridad para el día a día</p>
+      <h2 id="finance-cta-title">Empezá por entender tus movimientos.</h2>
+      <p>Ingresá a la aplicación para organizar tus finanzas personales.</p>
+      <a class="button button--primary" href="https://app.bilancioapp.com">Ingresar a Bilancio</a>
+    </section>
+  </div>
+</BaseLayout>

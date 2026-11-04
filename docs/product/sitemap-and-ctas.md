@@ -2,21 +2,22 @@
 
 ## Navegación principal
 
-Orden sugerido: Inicio, Finanzas personales, Gastos grupales, Inversiones y Cómo funciona. Gastos grupales debe ser fácil de encontrar, sin desplazar el posicionamiento general de Bilancio. Evitar sumar navegación comercial fuera de estas páginas en V1.
+Orden sugerido: Inicio, Finanzas personales, Gastos grupales y Cómo funciona. Gastos grupales debe ser fácil de encontrar, sin desplazar el posicionamiento general de Bilancio. Inversiones es una capacidad privada, disponible únicamente para el propietario del proyecto, y queda fuera de la website pública. Evitar sumar navegación comercial fuera de estas páginas en V1.
 
 ## Páginas previstas
 
 | Ruta | Objetivo y contenido | Acción principal |
 | --- | --- | --- |
-| `/` | Presentar la propuesta general con el claim **Tus finanzas, más claras.**; introducir finanzas personales, inversiones y gastos grupales. | CTA de autenticación según el estado confirmado en #5/#6; enlace secundario a Gastos grupales. |
+| `/` | Presentar la propuesta general con el claim **Tus finanzas, más claras.**; introducir finanzas personales y gastos grupales. | CTA de autenticación según el estado confirmado en #5/#6; enlace secundario a Gastos grupales. |
 | `/gastos-grupales` | Captar interés y explicar el flujo cotidiano de grupo, gasto, distribución, balance y sugerencia, diferenciando la liquidación manual. | CTA contextual sujeto al estado de acceso; nunca sugerir un pago ejecutado por Bilancio. |
 | `/finanzas-personales` | Explicar registro y organización de ingresos, gastos, cuentas, categorías, monedas e historial con los límites documentados. | CTA de autenticación sujeto a #5/#6. |
-| `/inversiones` | Presentar registro, posiciones, distribución y rendimiento con cobertura variable y sin promesas de trading o tiempo real. | CTA de autenticación sujeto a #5/#6. |
-| `/como-funciona` | Recorrer el producto a nivel general y conectar las tres áreas con demostraciones fieles y sintéticas. | CTA de autenticación sujeto a #5/#6. |
+| `/como-funciona` | Recorrer el producto a nivel general y conectar finanzas personales y gastos grupales con demostraciones fieles y sintéticas. | CTA de autenticación sujeto a #5/#6. |
 | `/privacidad` | Reservar la ruta para información de privacidad aplicable a la website. No redactar una política ficticia. | Sin CTA hasta que el contenido y revisión legal estén aprobados. |
 | `/terminos` | Reservar la ruta para términos aplicables a la website. No redactar términos ficticios. | Sin CTA hasta que el contenido y revisión legal estén aprobados. |
 
 No añadir blog, pricing, newsletter ni otras páginas comerciales en este alcance.
+
+La ruta heredada `/inversiones/` no es una página comercial. Mientras el build estático conserva la ruta por compatibilidad con el esqueleto de la #2, sirve un documento mínimo `noindex` que redirige de inmediato a `/` y ofrece un enlace de retorno accesible.
 
 ## Jerarquía y destinos de CTA
 

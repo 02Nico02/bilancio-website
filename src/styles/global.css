@@ -106,6 +106,16 @@ summary:focus-visible {
   white-space: nowrap;
 }
 
+.brand img {
+  width: 8.5rem;
+  height: auto;
+  display: block;
+}
+
+.site-footer .brand img {
+  width: 7.5rem;
+}
+
 .desktop-navigation,
 .site-footer nav {
   display: flex;
@@ -269,6 +279,10 @@ h1 {
     min-height: 2.5rem;
     padding-inline: 0.7rem;
     font-size: 0.8rem;
+  }
+
+  .brand img {
+    width: 7.2rem;
   }
 
   .site-footer__inner {
