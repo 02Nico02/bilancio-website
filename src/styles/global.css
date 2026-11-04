@@ -174,6 +174,12 @@ summary:focus-visible {
   text-underline-offset: 0.2em;
 }
 
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
 .mobile-navigation {
   display: none;
 }
