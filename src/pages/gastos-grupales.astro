@@ -1,6 +1,7 @@
 ---
 import GroupExpenseIllustration from '../components/GroupExpenseIllustration.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { AUTH_URLS } from '../config/auth';
 import '../styles/shared-expenses.css';
 
 const description =
@@ -68,7 +69,7 @@ const distinctions = [
           Organizá los gastos de viajes, salidas y grupos. Registrá quién pagó, repartí los importes y descubrí fácilmente quién le debe a quién.
         </p>
         <div class="shared-hero__actions">
-          <a class="button button--primary" href="https://app.bilancioapp.com">Ingresar a Bilancio</a>
+          <a class="button button--primary" href={AUTH_URLS.register}>Crear cuenta</a>
           <a class="text-link" href="#como-funciona">Ver cómo funciona <span aria-hidden="true">↓</span></a>
         </div>
         <p class="shared-hero__note">Un grupo, sus gastos y balances en la misma moneda.</p>
@@ -116,7 +117,7 @@ const distinctions = [
         <p class="eyebrow eyebrow--light">La cuenta siempre a la vista</p>
         <h2 id="balances-title">Entendé qué significa cada saldo.</h2>
         <p>Bilancio reúne los gastos registrados y muestra el resultado del grupo junto con posibles formas de saldar las diferencias.</p>
-        <a class="button button--light" href="https://app.bilancioapp.com">Ingresar a Bilancio <span aria-hidden="true">→</span></a>
+        <a class="button button--light" href={AUTH_URLS.register}>Crear cuenta <span aria-hidden="true">→</span></a>
       </div>
       <div class="balance-concepts">
         {distinctions.map((item) => (
@@ -142,7 +143,7 @@ const distinctions = [
       <p class="eyebrow">Un plan compartido, más ordenado</p>
       <h2 id="final-cta-title">Compartí los gastos.<br />Disfrutá el plan.</h2>
       <p>Ingresá a Bilancio para organizar tus cuentas y las de tus grupos.</p>
-      <a class="button button--primary" href="https://app.bilancioapp.com">Ingresar a Bilancio</a>
+      <a class="button button--primary" href={AUTH_URLS.register}>Crear cuenta</a>
     </section>
   </div>
 </BaseLayout>

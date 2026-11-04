@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { AUTH_URLS } from '../config/auth';
 import '../styles/home.css';
 
 const description =
@@ -13,7 +14,7 @@ const description =
       <h1 id="home-title">Tus finanzas,<br />más claras.</h1>
       <p class="home-hero__description">{description}</p>
       <div class="home-hero__actions">
-        <a class="button button--primary" href="https://app.bilancioapp.com">Ingresar a Bilancio</a>
+        <a class="button button--primary" href={AUTH_URLS.register}>Crear cuenta</a>
         <a class="text-link" href="#el-producto">Conocé el producto <span aria-hidden="true">↓</span></a>
       </div>
       <p class="home-hero__note">Una herramienta para ordenar tus finanzas y compartir gastos.</p>
@@ -133,6 +134,6 @@ const description =
       <li><span class="step-number">02</span><div><h3>Registrá tus movimientos</h3><p>Ordená ingresos y gastos por cuentas y categorías.</p></div></li>
       <li><span class="step-number">03</span><div><h3>Compartí los gastos del grupo</h3><p>Creá un grupo para un viaje, una salida o cualquier plan compartido.</p></div></li>
     </ol>
-    <a class="button button--primary how-section__cta" href="https://app.bilancioapp.com">Ingresar a Bilancio</a>
+    <a class="button button--primary how-section__cta" href={AUTH_URLS.register}>Crear cuenta</a>
   </section>
 </BaseLayout>
