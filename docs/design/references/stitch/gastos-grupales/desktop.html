@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-background": "#1c1c1a", "on-secondary": "#ffffff", "secondary-fixed": "#ffdad2", "background": "#fcf9f5", "on-primary-fixed": "#002114", "primary-fixed-dim": "#a5d0b9", "on-surface-variant": "#414844", "outline-variant": "#c1c8c2", "secondary-fixed-dim": "#ffb4a3", "inverse-on-surface": "#f3f0ec", "on-secondary-fixed-variant": "#822712", "surface-dim": "#dcdad6", "primary-container": "#1b4332", "surface-container-lowest": "#ffffff", "surface-container-high": "#ebe8e4", "on-tertiary-container": "#cd9d6d", "tertiary-fixed": "#ffdcbd", "primary": "#012d1d", "on-surface": "#1c1c1a", "tertiary-fixed-dim": "#f0bd8b", "secondary": "#a23e27", "on-tertiary-fixed": "#2c1600", "inverse-primary": "#a5d0b9", "surface": "#fcf9f5", "on-secondary-fixed": "#3d0600", "surface-container-low": "#f6f3ef", "surface-container": "#f0edea", "on-primary-container": "#86af99", "surface-bright": "#fcf9f5", "on-error-container": "#93000a", "error": "#ba1a1a", "surface-tint": "#3f6653", "error-container": "#ffdad6", "tertiary": "#3b1f00", "inverse-surface": "#31302e", "on-primary": "#ffffff", "on-secondary-container": "#721b08", "tertiary-container": "#56340e", "outline": "#717973", "surface-variant": "#e5e2de", "secondary-container": "#fe8266", "surface-container-highest": "#e5e2de", "on-primary-fixed-variant": "#274e3d", "primary-fixed": "#c1ecd4", "on-error": "#ffffff", "on-tertiary": "#ffffff", "on-tertiary-fixed-variant": "#623f18" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-lg": "1.5rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "margin": "2rem", "gutter": "1.5rem", "space-md": "1rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-sm": [ "Plus Jakarta Sans" ], "display-lg": [ "Newsreader" ], "numeric-table": [ "Plus Jakarta Sans" ], "numeric-balance": [ "Newsreader" ], "label-sm": [ "Plus Jakarta Sans" ], "title-md": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ], "body-lg": [ "Plus Jakarta Sans" ], "display-lg-mobile": [ "Newsreader" ], "headline-lg": [ "Newsreader" ], "headline-md": [ "Newsreader" ] }, "fontSize": { "headline-sm": [ "1.125rem", { "lineHeight": "1.625rem", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "display-lg": [ "3.5rem", { "lineHeight": "4rem", "letterSpacing": "-0.025em", "fontWeight": "400" } ], "numeric-table": [ "0.9375rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "numeric-balance": [ "2.75rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "400" } ], "label-sm": [ "0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.06em", "fontWeight": "600" } ], "title-md": [ "1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "600" } ], "body-md": [ "0.9375rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" } ], "label-md": [ "0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "600" } ], "body-sm": [ "0.8125rem", { "lineHeight": "1.25rem", "letterSpacing": "0.005em", "fontWeight": "400" } ], "body-lg": [ "1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "0em", "fontWeight": "400" } ], "display-lg-mobile": [ "2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "400" } ], "headline-lg": [ "2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.015em", "fontWeight": "400" } ], "headline-md": [ "1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.01em", "fontWeight": "500" } ] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-surface-container-highest shadow-[0_1px_8px_rgba(0,0,0,0.02)]"><div class="h-20 max-w-[1360px] mx-auto px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><a class="flex items-center gap-3" data-path="inicio" href="#"><img alt="Brand logo. - Primary color: #1b4332 - Font: newsreader - Mode: light - Roundness: rounded-sm" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VP0PApZh2Sn9qddSq_im2AurjA7hkzILAD6k0RVh92-gNaX0OamaoLWL_IfzIT5Q9o4vKy-ZbVkGHiZIMz8RmnC88bzAgqKzaJIz7b1TV3H9dmJE_6ZciR2_1NDQAqoyWAT7R739ILEIECQd7ZlQ2IonKxFZyYSyHzN2lU8_CmIhjVKsWJdP9Uq6ZQsyw62irAzumX4iDbwxajjuVZgiIbwDlFLiXDnYScywJu68Xk2E4cW63037cqTOA"/><span class="font-headline-md text-headline-md tracking-tight text-primary font-medium">Bilancio</span></a></div><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-primary font-title-md"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-150" data-path="finanzas-personales" href="#">Finanzas personales</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-150" data-path="gastos-grupales" href="#">Gastos grupales</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-150" data-path="inversiones" href="#">Inversiones</a></nav><div class="flex items-center gap-space-md"><a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors duration-150 px-space-xs py-2" data-path="iniciar-sesion" href="#">Iniciar sesión</a><a class="inline-flex items-center justify-center font-title-md text-title-md px-space-md py-2.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-colors duration-150 shadow-sm" data-path="empezar" href="#">Empezar con Bilancio</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- HERO SECTION -->
+<section class="w-full max-w-[1360px] mx-auto px-gutter py-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Columna Izquierda: Editorial Content -->
+<div class="lg:col-span-6 flex flex-col items-start pr-0 lg:pr-space-md">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container text-on-surface-variant mb-6 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Módulo de Gastos Compartidos</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight text-balance leading-none mb-6">
+          Compartí los gastos.<br/><span class="italic font-display-lg text-primary-container">Mantené las cuentas claras.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-8 max-w-xl">
+          Organizá los gastos de viajes, salidas o actividades compartidas. Registrá quién pagó, repartí los importes con precisión matemática y consultá al instante quién debe a quién sin intermediarios bancarios ni enredos.
+        </p>
+<div class="flex flex-wrap items-center gap-4">
+<a class="inline-flex items-center justify-center font-title-md text-title-md px-6 py-3.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all duration-150 shadow-sm gap-2" href="#comenzar">
+<span>Empezar con Bilancio</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center font-title-md text-title-md px-6 py-3.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all duration-150 shadow-sm" href="#como-funciona">
+            Ver cómo funciona
+          </a>
+</div>
+<!-- Metric Indicator Ribbon -->
+<div class="mt-12 pt-6 w-full flex items-center gap-8">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-primary font-medium">100%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Aislado de tu patrimonio</span>
+</div>
+<div class="w-px h-8 bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-primary font-medium">Link Web</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Sin app obligatoria</span>
+</div>
+<div class="w-px h-8 bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-primary font-medium">0 comisión</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Liquidación libre</span>
+</div>
+</div>
+</div>
+<!-- Columna Derecha: Authentic Live Ledger Card Showcase -->
+<div class="lg:col-span-6 relative mt-8 lg:mt-0">
+<!-- Ambient decorative backdrop card element -->
+<div class="absolute -top-4 -right-4 w-72 h-72 bg-primary-fixed/30 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative bg-surface-container-lowest rounded-xl shadow-xl p-space-lg">
+<!-- Card Header: Group Status -->
+<div class="flex items-center justify-between pb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">terrain</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Viaje a Bariloche</h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-primary-fixed text-on-primary-fixed">Abierto</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Moneda base: ARS · Creado por Nicolás</p>
+</div>
+</div>
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" title="Opciones">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<!-- Section: 3 Integrantes -->
+<div class="py-4">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Integrantes (3)</span>
+<span class="font-label-sm text-label-sm text-primary-container font-semibold">Balance neto equilibrado</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<!-- Member 1: Nicolás -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary text-label-sm flex items-center justify-center font-bold">N</div>
+<span class="font-body-sm text-body-sm font-medium text-on-surface truncate">Nicolás</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Saldo</span>
+<span class="font-numeric-table text-numeric-table font-semibold text-primary mt-0.5">+ARS 1.300</span>
+</div>
+<!-- Member 2: Lucía -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface text-label-sm flex items-center justify-center font-bold">L</div>
+<span class="font-body-sm text-body-sm font-medium text-on-surface truncate">Lucía</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Saldo</span>
+<span class="font-numeric-table text-numeric-table font-semibold text-secondary mt-0.5">-ARS 800</span>
+</div>
+<!-- Member 3: Martín -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface text-label-sm flex items-center justify-center font-bold">M</div>
+<span class="font-body-sm text-body-sm font-medium text-on-surface truncate">Martín</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Saldo</span>
+<span class="font-numeric-table text-numeric-table font-semibold text-secondary mt-0.5">-ARS 500</span>
+</div>
+</div>
+</div>
+<!-- Section: Settlement Advice (Sugerencia de Liquidación) -->
+<div class="mt-4 p-4 rounded-xl bg-surface-container">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary-container">sync_alt</span>
+<span class="font-title-md text-title-md text-on-surface font-medium">Sugerencia para liquidar</span>
+</div>
+<button class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface text-label-sm font-label-sm hover:bg-surface-container-high transition-colors shadow-sm" id="copy-summary-btn" onclick="navigator.clipboard.writeText('Liquidación Viaje a Bariloche:\n- Lucía paga ARS 800 a Nicolás\n- Martín paga ARS 500 a Nicolás'); alert('Resumen copiado al portapapeles');">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span>Copiar resumen</span>
+</button>
+</div>
+<!-- List of suggested micro-settlements -->
+<div class="space-y-2">
+<div class="p-2.5 rounded-lg bg-surface-container-lowest flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-body-md text-body-md text-on-surface"><strong class="font-semibold">Lucía</strong> le paga a <strong class="font-semibold">Nicolás</strong></span>
+</div>
+<span class="font-numeric-table text-numeric-table font-bold text-on-surface">ARS 800</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-lowest flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-body-md text-body-md text-on-surface"><strong class="font-semibold">Martín</strong> le paga a <strong class="font-semibold">Nicolás</strong></span>
+</div>
+<span class="font-numeric-table text-numeric-table font-bold text-on-surface">ARS 500</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-3 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">info</span>
+              Resumen matemático óptimo: 2 transferencias para saldar todo el grupo.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CASOS DE USO (EDITORIAL COMPACTO) -->
+<section class="w-full bg-surface-container-low py-space-xl">
+<div class="max-w-[1360px] mx-auto px-gutter">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Flexibilidad total</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-2">Para todos esos gastos que compartimos.</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mt-2 md:mt-0">
+          Un modelo de reparto adaptable para cualquier circunstancia social o de convivencia, sin rigideces ni cálculos manuales.
+        </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Caso 1: Vacaciones -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary-container mb-4">
+<span class="material-symbols-outlined text-[24px]">flight_takeoff</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Vacaciones</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Alojamiento, combustible, pasajes compartidos, comidas y actividades de viaje sin guardar boletos en bolsillos.
+            </p>
+</div>
+<div class="mt-6 pt-4 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Multi-pagador activo</span>
+</div>
+</div>
+<!-- Caso 2: Salidas -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary-container mb-4">
+<span class="material-symbols-outlined text-[24px]">restaurant</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Salidas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Cenas, asados, bares, eventos de fin de semana y consumos compartidos con división exacta al instante.
+            </p>
+</div>
+<div class="mt-6 pt-4 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cálculo en la mesa</span>
+</div>
+</div>
+<!-- Caso 3: Hogar -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary-container mb-4">
+<span class="material-symbols-outlined text-[24px]">home_work</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Hogar</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Compras de supermercado, insumos del mes, servicios compartidos y gastos comunes de convivencia cotidiana.
+            </p>
+</div>
+<div class="mt-6 pt-4 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Historial continuo</span>
+</div>
+</div>
+<!-- Caso 4: Eventos -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary-container mb-4">
+<span class="material-symbols-outlined text-[24px]">celebration</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Eventos</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Festejos, cumpleaños, regalos compartidos colectivos y proyectos recreativos entre amistades o colegas.
+            </p>
+</div>
+<div class="mt-6 pt-4 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Reparto personalizado</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN PRINCIPAL: CÓMO FUNCIONA (NARRATIVA CONECTADA) -->
+<section class="w-full py-space-xl max-w-[1360px] mx-auto px-gutter" id="como-funciona">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Secuencia clara y transparente</span>
+<h2 class="font-display-lg text-headline-lg md:text-display-lg text-primary tracking-tight mt-2">
+        De un gasto compartido a las cuentas claras.
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4">
+        Un flujo paso a paso ilustrado con una situación real: el grupo <strong class="text-on-surface">«Viaje a Bariloche»</strong> y el registro de la <strong class="text-on-surface">«Cena en restaurante · ARS 18.000»</strong>.
+      </p>
+</div>
+<!-- Timeline Blocks Alternados -->
+<div class="flex flex-col gap-16">
+<!-- PASO 1: Creá un grupo -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-3">
+<span class="w-8 h-8 rounded-full bg-primary-container text-on-primary font-title-md text-title-md flex items-center justify-center font-bold">1</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Paso uno</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Creá un grupo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">
+            Reuní los gastos compartidos en un mismo lugar. Definí el nombre del grupo, la moneda de trabajo (ej. ARS) e incorporá a los participantes con solo escribir sus nombres.
+          </p>
+<div class="p-3 bg-surface-container rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+              No requiere que tus amigos tengan una cuenta para que puedas gestionarlo.
+            </span>
+</div>
+</div>
+<div class="lg:col-span-7">
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md">
+<div class="flex items-center justify-between pb-3">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Ficha de Grupo</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Estado: Configurado</span>
+</div>
+<div class="flex items-center gap-4 py-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[28px]">cabin</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Viaje a Bariloche</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Moneda principal: ARS ($) · 3 miembros añadidos</p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3">
+<div class="p-3 rounded-lg bg-surface-container flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary text-label-md flex items-center justify-center">N</div>
+<div>
+<p class="font-body-sm text-body-sm font-semibold text-on-surface">Nicolás</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Creador</p>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface text-label-md flex items-center justify-center">L</div>
+<div>
+<p class="font-body-sm text-body-sm font-semibold text-on-surface">Lucía</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Integrante</p>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface text-label-md flex items-center justify-center">M</div>
+<div>
+<p class="font-body-sm text-body-sm font-semibold text-on-surface">Martín</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Integrante</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Connector line -->
+<div class="w-px h-10 bg-surface-container-highest mx-auto"></div>
+<!-- PASO 2: Registrá quién pagó (Con múltiples pagadores) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-7 order-2 lg:order-1">
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">receipt_long</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Cena en restaurante</span>
+</div>
+<span class="font-numeric-table text-numeric-table font-bold text-on-surface px-2.5 py-1 bg-surface-container rounded">ARS 18.000</span>
+</div>
+<div class="py-3">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Aportes / Múltiples pagadores</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Suma verificada 100%</span>
+</div>
+<div class="space-y-2">
+<div class="p-3 rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary text-label-sm flex items-center justify-center font-bold">N</div>
+<span class="font-body-md text-body-md text-on-surface">Nicolás abonó</span>
+</div>
+<span class="font-numeric-table text-numeric-table font-semibold text-primary">ARS 12.000</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface text-label-sm flex items-center justify-center font-bold">L</div>
+<span class="font-body-md text-body-md text-on-surface">Lucía abonó</span>
+</div>
+<span class="font-numeric-table text-numeric-table font-semibold text-primary">ARS 6.000</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between opacity-60">
+<div class="flex items-center gap-2.5">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface text-label-sm flex items-center justify-center font-bold">M</div>
+<span class="font-body-sm text-body-sm text-on-surface">Martín abonó</span>
+</div>
+<span class="font-numeric-table text-numeric-table text-on-surface-variant">ARS 0</span>
+</div>
+</div>
+</div>
+<div class="mt-2 pt-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fecha: 14 Oct 2025</span>
+<span class="font-label-sm text-label-sm text-primary-container font-semibold">Total cubierto: ARS 18.000</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 order-1 lg:order-2 flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-3">
+<span class="w-8 h-8 rounded-full bg-primary-container text-on-primary font-title-md text-title-md flex items-center justify-center font-bold">2</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Paso dos</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Registrá quién pagó</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">
+            Ingresá el gasto con total realismo: una persona puede pagar la cuenta completa, o dos participantes pueden combinar efectivo y tarjeta para cubrir el total.
+          </p>
+<div class="p-3 bg-surface-container rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+              Bilancio valida automáticamente que la sumatoria de aportes coincida exactamente con el importe total del gasto cargado.
+            </span>
+</div>
+</div>
+</div>
+<!-- Connector line -->
+<div class="w-px h-10 bg-surface-container-highest mx-auto"></div>
+<!-- PASO 3: Repartí el gasto -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-3">
+<span class="w-8 h-8 rounded-full bg-primary-container text-on-primary font-title-md text-title-md flex items-center justify-center font-bold">3</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Paso tres</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Repartí el gasto</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">
+            Distribuí el consumo entre quienes realmente participaron. Seleccioná partes iguales, o si alguien consumió más, utilizá reparto por importe exacto o porcentaje.
+          </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">Partes iguales (1/3)</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Por importe</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Por porcentaje</span>
+</div>
+</div>
+<div class="lg:col-span-7">
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md">
+<div class="flex items-center justify-between pb-3">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Criterio: Partes iguales (3 personas)</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Total a prorratear: ARS 18.000</span>
+</div>
+<div class="space-y-3 py-3">
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px] text-primary">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Nicolás</span>
+</div>
+<div class="text-right">
+<span class="font-numeric-table text-numeric-table font-semibold text-on-surface">ARS 6.000</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">33.3% del gasto</p>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px] text-primary">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Lucía</span>
+</div>
+<div class="text-right">
+<span class="font-numeric-table text-numeric-table font-semibold text-on-surface">ARS 6.000</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">33.3% del gasto</p>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px] text-primary">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Martín</span>
+</div>
+<div class="text-right">
+<span class="font-numeric-table text-numeric-table font-semibold text-on-surface">ARS 6.000</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">33.3% del gasto</p>
+</div>
+</div>
+</div>
+<!-- Visual Bar of Distribution -->
+<div class="w-full h-2 rounded-full bg-surface-container flex overflow-hidden mt-2">
+<div class="w-1/3 bg-primary"></div>
+<div class="w-1/3 bg-primary-container"></div>
+<div class="w-1/3 bg-primary-fixed-dim"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Connector line -->
+<div class="w-px h-10 bg-surface-container-highest mx-auto"></div>
+<!-- PASO 4: Consultá los balances -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-7 order-2 lg:order-1">
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md">
+<div class="flex items-center justify-between pb-3">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Balances tras el registro</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Cuentas cuadradas</span>
+</div>
+<div class="space-y-2 py-3">
+<!-- Nicolás -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Nicolás</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pagó 12.000 · Le correspondían 6.000</p>
+</div>
+<span class="font-numeric-table text-numeric-table font-bold text-primary">+ARS 6.000</span>
+</div>
+<!-- Lucía -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Lucía</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pagó 6.000 · Le correspondían 6.000</p>
+</div>
+<span class="font-numeric-table text-numeric-table font-semibold text-on-surface-variant">ARS 0 (Saldada)</span>
+</div>
+<!-- Martín -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Martín</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pagó 0 · Le correspondían 6.000</p>
+</div>
+<span class="font-numeric-table text-numeric-table font-bold text-secondary">-ARS 6.000</span>
+</div>
+</div>
+<!-- Settlement Result Box -->
+<div class="mt-3 p-3.5 rounded-lg bg-primary-fixed/20 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary">lightbulb</span>
+<span class="font-body-md text-body-md text-on-surface"><strong class="font-semibold">Martín</strong> le paga <strong class="font-semibold">ARS 6.000</strong> a <strong class="font-semibold">Nicolás</strong></span>
+</div>
+<span class="font-label-sm text-label-sm uppercase px-2 py-0.5 rounded bg-primary-container text-on-primary">1 pago resuelve todo</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 order-1 lg:order-2 flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-3">
+<span class="w-8 h-8 rounded-full bg-primary-container text-on-primary font-title-md text-title-md flex items-center justify-center font-bold">4</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Paso cuatro</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Consultá los balances</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">
+            Visualizá instantáneamente el saldo consolidado de cada participante y la propuesta de liquidación más corta posible para dejar las cuentas en cero.
+          </p>
+<div class="p-3 bg-surface-container rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+              La sugerencia es informativa: las partes transfieren por su banco o billetera habitual y registran el pago con un click.
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BALANCES Y PAGOS SUGERIDOS: 3 CONCEPTOS CLAVE -->
+<section class="w-full bg-surface-container-low py-space-xl">
+<div class="max-w-[1360px] mx-auto px-gutter">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Claridad conceptual</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-2">Todos saben cómo están las cuentas.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-3">
+          El sistema distingue de forma transparente tres componentes clave para que nunca existan malentendidos entre los integrantes.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Concepto 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center font-bold text-primary font-headline-sm">1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Automático</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Balance calculado</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6">
+              El resultado neto exacto entre lo que una persona aportó efectivamente y lo que le correspondía pagar por los consumos en los que participó.
+            </p>
+</div>
+<div class="p-3 rounded-lg bg-surface-container">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Ejemplo</span>
+<div class="flex justify-between items-center mt-1">
+<span class="font-body-sm text-body-sm text-on-surface">Nicolás (Neto)</span>
+<span class="font-numeric-table text-numeric-table font-semibold text-primary">+ARS 1.300 a favor</span>
+</div>
+</div>
+</div>
+<!-- Concepto 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center font-bold text-primary font-headline-sm">2</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Algoritmo</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Pago sugerido</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6">
+              Recomendación matemática inteligente diseñada para minimizar la cantidad de transferencias requeridas para saldar el grupo por completo.
+            </p>
+</div>
+<div class="p-3 rounded-lg bg-surface-container">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Optimización</span>
+<div class="flex justify-between items-center mt-1">
+<span class="font-body-sm text-body-sm text-on-surface">Lucía ➔ Nicolás</span>
+<span class="font-numeric-table text-numeric-table font-semibold text-on-surface">ARS 800</span>
+</div>
+</div>
+</div>
+<!-- Concepto 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center font-bold text-primary font-headline-sm">3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Manual</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Pago registrado</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6">
+              Liquidaciones reales anotadas de común acuerdo cuando un integrante transfiere dinero a otro por fuera de la plataforma, actualizando el saldo al instante.
+            </p>
+</div>
+<div class="p-3 rounded-lg bg-surface-container">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Comprobante</span>
+<div class="flex justify-between items-center mt-1">
+<span class="font-body-sm text-body-sm text-on-surface">Transferencia acreditada</span>
+<span class="font-label-sm text-label-sm text-primary-container font-semibold">Registrado</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- COMPARTIR LA INFORMACIÓN: VISTA PÚBLICA DE CONSULTA -->
+<section class="w-full py-space-xl max-w-[1360px] mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Acceso sin fricciones</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-2 mb-4">Las cuentas claras para todos.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+          Compartí una vista de consulta del grupo mediante un enlace de solo lectura para que todos los participantes puedan revisar gastos, comprobantes y balances sin necesidad de instalar aplicaciones, crearse contraseñas ni iniciar sesión.
+        </p>
+<div class="space-y-3">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">link</span>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold">Enlace web instantáneo</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Funciona en cualquier navegador móvil o de escritorio.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">visibility</span>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold">Solo lectura segura</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Nadie modifica tus registros sin autorización.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">no_accounts</span>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold">Cero fricción de registro</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tus amigos abren el link y ven de inmediato si deben o les deben.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Mockup de la cabecera e interfaz de la vista pública de lectura -->
+<div class="lg:col-span-7">
+<div class="bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden">
+<!-- Web Browser Simulation Header -->
+<div class="bg-surface-container px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-surface-dim"></span>
+<span class="w-3 h-3 rounded-full bg-surface-dim"></span>
+<span class="w-3 h-3 rounded-full bg-surface-dim"></span>
+</div>
+<div class="px-4 py-1 rounded bg-surface-container-lowest text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1.5 shadow-sm max-w-sm w-full justify-center">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span class="truncate">bilancioapp.com/g/viaje-bariloche-q8x9</span>
+</div>
+<div class="w-12"></div>
+</div>
+<!-- Public Read-Only Container (NO SIDEBAR, Editorial & Clean) -->
+<div class="p-6 md:p-8 bg-surface-container-lowest">
+<!-- Top Alert Badge -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low mb-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">visibility</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Modo consulta pública · Solo lectura</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Actualizado hace 5m</span>
+</div>
+<!-- Header of Group -->
+<div class="flex items-start justify-between pb-6">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Grupo Compartido</span>
+<h3 class="font-headline-md text-headline-md text-primary font-semibold mt-1">Viaje a Bariloche</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">3 integrantes · 4 gastos registrados · Moneda ARS</p>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Total gastado</span>
+<p class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">ARS 54.200</p>
+</div>
+</div>
+<!-- Public balances table -->
+<div class="pt-4">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block mb-3">Estado de cuentas individuales</span>
+<div class="space-y-2">
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface font-medium">Nicolás</span>
+<span class="font-numeric-table text-numeric-table font-semibold text-primary">+ARS 1.300 (a favor)</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface font-medium">Lucía</span>
+<span class="font-numeric-table text-numeric-table font-semibold text-secondary">-ARS 800 (a pagar)</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface font-medium">Martín</span>
+<span class="font-numeric-table text-numeric-table font-semibold text-secondary">-ARS 500 (a pagar)</span>
+</div>
+</div>
+</div>
+<!-- Micro copy notice -->
+<div class="mt-6 pt-4 text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Enlace generado por el creador del grupo con Bilancio.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- INDEPENDENCIA DE LAS FINANZAS PERSONALES -->
+<section class="w-full bg-surface-container-low py-space-xl">
+<div class="max-w-[1360px] mx-auto px-gutter">
+<div class="max-w-2xl mx-auto text-center mb-12">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Privacidad y rigor contable</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-2">Tus gastos compartidos, por separado.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-3">
+          Organizá las cuentas grupales sin que afecten tus cuentas bancarias, ingresos personales, categorías ni balance patrimonial privado en Bilancio.
+        </p>
+</div>
+<!-- Visual comparativo sobrio y refinado -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter max-w-4xl mx-auto">
+<!-- Tarjeta: Finanzas Personales (Privadas) -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Tus Finanzas Privadas</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Área confidencial personal</span>
+</div>
+</div>
+<ul class="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+<span>Cuentas bancarias reales, cajas de ahorro y tarjetas.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+<span>Presupuestos mensuales y flujo de ingresos propio.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+<span>Patrimonio neto privado inaccesible para terceros.</span>
+</li>
+</ul>
+</div>
+<!-- Tarjeta: Módulo Grupal (Independiente) -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Módulo Gastos Grupales</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Entorno aislado y colaborativo</span>
+</div>
+</div>
+<ul class="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+<span>No distorsiona tus métricas mensuales de ahorro.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+<span>Los amigos no ven tus saldos ni tus otros grupos.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+<span>Podés registrar tu pago como gasto personal solo si lo deseás.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA FINAL -->
+<section class="w-full py-space-xl max-w-[1360px] mx-auto px-gutter" id="comenzar">
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-xl text-center max-w-3xl mx-auto">
+<div class="w-14 h-14 rounded-full bg-surface-container mx-auto flex items-center justify-center text-primary-container mb-6">
+<span class="material-symbols-outlined text-[28px]">handshake</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mb-3">
+        Que compartir gastos sea más simple.
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl mx-auto leading-relaxed">
+        Organizá tu próximo viaje, salida o actividad compartida con Bilancio y mantené la tranquilidad de tener las cuentas claras.
+      </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<a class="inline-flex items-center justify-center font-title-md text-title-md px-8 py-3.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all duration-150 shadow-sm gap-2 w-full sm:w-auto" href="#">
+<span>Empezar con Bilancio</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-6">
+        Disponible en web y responsive · Acceso inmediato
+      </p>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-low border-t border-surface-container-highest mt-space-xl"><div class="max-w-[1360px] mx-auto px-gutter py-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-space-xl"><div class="md:col-span-5 flex flex-col gap-space-sm pr-space-lg"><div class="flex items-center gap-3"><img alt="Bilancio logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VP0PApZh2Sn9qddSq_im2AurjA7hkzILAD6k0RVh92-gNaX0OamaoLWL_IfzIT5Q9o4vKy-ZbVkGHiZIMz8RmnC88bzAgqKzaJIz7b1TV3H9dmJE_6ZciR2_1NDQAqoyWAT7R739ILEIECQd7ZlQ2IonKxFZyYSyHzN2lU8_CmIhjVKsWJdP9Uq6ZQsyw62irAzumX4iDbwxajjuVZgiIbwDlFLiXDnYScywJu68Xk2E4cW63037cqTOA"/><span class="font-headline-md text-headline-md tracking-tight text-primary font-medium">Bilancio</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm mt-2 leading-relaxed">Gestión patrimonial deliberada y tranquila. Diseñada para ordenar finanzas personales, gastos compartidos e inversiones con rigor editorial suizo.</p></div><div class="md:col-span-4 flex flex-col gap-3"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Plataforma</span><nav class="flex flex-col gap-2.5"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="inicio" href="#">Home</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="finanzas-personales" href="#">Finanzas personales</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="gastos-grupales" href="#">Gastos grupales</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="inversiones" href="#">Inversiones</a></nav></div><div class="md:col-span-3 flex flex-col gap-3"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Legal &amp; Cuenta</span><nav class="flex flex-col gap-2.5"><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="privacidad" href="#">Privacidad</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="terminos" href="#">Términos</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" data-path="iniciar-sesion" href="#">Acceder a Bilancio</a></nav></div></div><div class="pt-space-md border-t border-surface-container-highest flex flex-col sm:flex-row items-center justify-between gap-4"><p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 Bilancio Technologies. bilancioapp.com. Todos los derechos reservados.</p><p class="font-body-sm text-body-sm text-on-surface-variant">Arquitectura patrimonial y registro privado.</p></div></div></footer></body></html>
