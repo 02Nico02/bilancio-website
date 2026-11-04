@@ -1,5 +1,148 @@
 ---
-import ContentPlaceholder from '../components/ContentPlaceholder.astro';
+import GroupExpenseIllustration from '../components/GroupExpenseIllustration.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/shared-expenses.css';
+
+const description =
+  'Organizá gastos de viajes, salidas y grupos con Bilancio. Registrá quién pagó, repartí importes y consultá balances y sugerencias para saldar diferencias.';
+
+const situations = [
+  {
+    number: '01',
+    title: 'Viajes con amigos',
+    description: 'Alojamiento, comidas y traslados compartidos durante una escapada.',
+    icon: '↗',
+  },
+  {
+    number: '02',
+    title: 'Salidas y reuniones',
+    description: 'Registrá los gastos del plan y cómo se reparten entre quienes participaron.',
+    icon: '◷',
+  },
+  {
+    number: '03',
+    title: 'Gastos entre grupos',
+    description: 'Llevá una cuenta compartida para un equipo, una casa o cualquier grupo.',
+    icon: '◎',
+  },
+];
+
+const steps = [
+  { number: '01', title: 'Creá un grupo', description: 'Poné un nombre al plan y elegí la moneda para registrar sus gastos.' },
+  { number: '02', title: 'Agregá participantes', description: 'Sumá a las personas que forman parte de las cuentas compartidas.' },
+  { number: '03', title: 'Registrá quién pagó', description: 'Anotá el gasto y quién puso el dinero.' },
+  { number: '04', title: 'Repartí el importe', description: 'Elegí quiénes participan y distribuí por partes iguales, importes o porcentajes.' },
+  { number: '05', title: 'Consultá los balances', description: 'Mirá el saldo a favor o pendiente de cada integrante.' },
+  { number: '06', title: 'Revisá las sugerencias', description: 'Usá la guía para saldar diferencias y registrá liquidaciones según los permisos del grupo.' },
+];
+
+const distinctions = [
+  {
+    number: '01',
+    title: 'Balance',
+    description: 'Resume lo que cada persona pagó y su parte de los gastos compartidos.',
+    className: 'balance-concept--result',
+  },
+  {
+    number: '02',
+    title: 'Sugerencia',
+    description: 'Indica una forma de saldar diferencias. No inicia ni confirma una transferencia.',
+    className: 'balance-concept--suggestion',
+  },
+  {
+    number: '03',
+    title: 'Liquidación registrada',
+    description: 'Es un hecho declarado por participantes y puede requerir confirmación según el acceso. No verifica un pago bancario.',
+    className: 'balance-concept--settlement',
+  },
+];
 ---
 
-<ContentPlaceholder title="Gastos grupales" />
+<BaseLayout title="Gastos grupales para viajes y salidas" description={description}>
+  <div class="shared-expenses-page">
+    <section class="shared-hero" aria-labelledby="shared-hero-title">
+      <div class="shared-hero__copy">
+        <p class="eyebrow">Para viajes, salidas y grupos</p>
+        <h1 id="shared-hero-title">Compartí los gastos,<br />no las complicaciones.</h1>
+        <p class="shared-hero__description">
+          Organizá los gastos de viajes, salidas y grupos. Registrá quién pagó, repartí los importes y descubrí fácilmente quién le debe a quién.
+        </p>
+        <div class="shared-hero__actions">
+          <a class="button button--primary" href="https://app.bilancioapp.com">Ingresar a Bilancio</a>
+          <a class="text-link" href="#como-funciona">Ver cómo funciona <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="shared-hero__note">Un grupo, sus gastos y balances en la misma moneda.</p>
+      </div>
+      <div class="shared-hero__visual">
+        <GroupExpenseIllustration />
+      </div>
+    </section>
+
+    <section class="shared-situations" aria-labelledby="situations-title">
+      <div class="shared-section-heading">
+        <p class="eyebrow">Cuando compartir también es organizarse</p>
+        <h2 id="situations-title">Cada plan tiene sus cuentas.</h2>
+        <p>De una escapada de fin de semana a una salida entre varias personas, registrá los gastos donde todos puedan consultarlos según su acceso.</p>
+      </div>
+      <div class="situation-grid">
+        {situations.map((situation) => (
+          <article class="situation-card">
+            <div class="situation-card__top"><span>{situation.number}</span><span class="situation-card__icon" aria-hidden="true">{situation.icon}</span></div>
+            <h3>{situation.title}</h3>
+            <p>{situation.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="shared-process" id="como-funciona" aria-labelledby="process-title">
+      <div class="shared-section-heading shared-section-heading--center">
+        <p class="eyebrow">Simple de seguir</p>
+        <h2 id="process-title">De un gasto compartido<br class="desktop-break" /> a cuentas más claras.</h2>
+        <p>Un recorrido directo para que el grupo sepa qué se registró y cómo quedó el balance.</p>
+      </div>
+      <ol class="shared-steps">
+        {steps.map((step) => (
+          <li class="shared-step">
+            <span class="shared-step__number">{step.number}</span>
+            <div><h3>{step.title}</h3><p>{step.description}</p></div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="shared-balances" aria-labelledby="balances-title">
+      <div class="shared-balances__intro">
+        <p class="eyebrow eyebrow--light">La cuenta siempre a la vista</p>
+        <h2 id="balances-title">Entendé qué significa cada saldo.</h2>
+        <p>Bilancio reúne los gastos registrados y muestra el resultado del grupo junto con posibles formas de saldar las diferencias.</p>
+        <a class="button button--light" href="https://app.bilancioapp.com">Ingresar a Bilancio <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="balance-concepts">
+        {distinctions.map((item) => (
+          <article class:list={['balance-concept', item.className]}>
+            <span class="balance-concept__number">{item.number}</span>
+            <div><h3>{item.title}</h3><p>{item.description}</p></div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="shared-access" aria-labelledby="access-title">
+      <div class="shared-access__mark" aria-hidden="true">↗</div>
+      <div>
+        <p class="eyebrow">Acceso y colaboración</p>
+        <h2 id="access-title">Compartí la información con criterio.</h2>
+        <p>Quien crea el grupo puede habilitar un enlace de consulta de solo lectura. Para colaborar desde una cuenta Bilancio, las acciones disponibles dependen del acceso y los permisos de cada integrante.</p>
+        <p class="shared-access__note">La consulta compartida no habilita edición anónima. Registrar o confirmar una liquidación depende del flujo y los permisos aplicables.</p>
+      </div>
+    </section>
+
+    <section class="shared-final-cta" aria-labelledby="final-cta-title">
+      <p class="eyebrow">Un plan compartido, más ordenado</p>
+      <h2 id="final-cta-title">Compartí los gastos.<br />Disfrutá el plan.</h2>
+      <p>Ingresá a Bilancio para organizar tus cuentas y las de tus grupos.</p>
+      <a class="button button--primary" href="https://app.bilancioapp.com">Ingresar a Bilancio</a>
+    </section>
+  </div>
+</BaseLayout>

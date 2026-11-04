@@ -713,16 +713,6 @@
   margin-block-start: 0.5rem;
 }
 
-.brand img {
-  width: 8.5rem;
-  height: auto;
-  display: block;
-}
-
-.site-footer .brand img {
-  width: 7.5rem;
-}
-
 @media (min-width: 64.001rem) {
   .site-header__inner {
     min-height: 5.25rem;
@@ -959,9 +949,6 @@
     border-inline-start: 0;
   }
 
-  .brand img {
-    width: 7.2rem;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
