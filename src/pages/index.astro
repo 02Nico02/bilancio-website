@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const description =
+  'Organizá tus ingresos y gastos, seguí tus inversiones y gestioná los gastos que compartís con otras personas. Todo desde un mismo lugar.';
+---
+
+<BaseLayout title="Tus finanzas, más claras" description={description}>
+  <section class="home-intro" aria-labelledby="home-title">
+    <h1 id="home-title">Tus finanzas, más claras.</h1>
+    <p>{description}</p>
+  </section>
+</BaseLayout>
