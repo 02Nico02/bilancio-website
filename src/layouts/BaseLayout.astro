@@ -20,8 +20,10 @@ const canonicalUrl = new URL(Astro.url.pathname, site);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#fcf9f5" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="canonical" href={canonicalUrl} />
     <title>{title} | Bilancio</title>
+    <slot name="head" />
   </head>
   <body>
     <a class="skip-link" href="#contenido">Ir al contenido</a>

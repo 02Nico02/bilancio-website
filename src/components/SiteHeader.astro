@@ -1,9 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+import logo from '../assets/brand/logo-bilancio.png';
+
 const navigation = [
   { href: '/', label: 'Inicio' },
   { href: '/finanzas-personales/', label: 'Finanzas personales' },
   { href: '/gastos-grupales/', label: 'Gastos grupales' },
-  { href: '/inversiones/', label: 'Inversiones' },
   { href: '/como-funciona/', label: 'Cómo funciona' },
 ];
 
@@ -12,7 +14,9 @@ const appUrl = 'https://app.bilancioapp.com';
 
 <header class="site-header">
   <div class="site-header__inner">
-    <a class="brand" href="/" aria-label="Bilancio, inicio">Bilancio</a>
+    <a class="brand" href="/" aria-label="Bilancio, inicio">
+      <Image src={logo} width={144} height={48} format="webp" quality={88} alt="" />
+    </a>
 
     <nav class="desktop-navigation" aria-label="Principal">
       {navigation.map((item) => <a href={item.href}>{item.label}</a>)}

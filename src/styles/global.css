@@ -45,6 +45,7 @@
 html {
   min-width: 320px;
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {

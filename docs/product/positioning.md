@@ -6,7 +6,7 @@ La website presenta Bilancio como un producto de gestión financiera personal, e
 
 ## Público y posicionamiento
 
-Personas que quieren ordenar ingresos, gastos e inversiones; y personas que necesitan llevar las cuentas de viajes, salidas y otros gastos compartidos. La website se dirige a público hispanohablante con tono claro, cotidiano y voseo rioplatense. Gastos grupales es un diferencial destacado, sin definir por sí solo toda la identidad del producto.
+Personas que quieren ordenar ingresos y gastos, y personas que necesitan llevar las cuentas de viajes, salidas y otros gastos compartidos. La website se dirige a público hispanohablante con tono claro, cotidiano y voseo rioplatense. Gastos grupales es un diferencial destacado, sin definir por sí solo toda la identidad del producto. Inversiones es una capacidad privada, disponible únicamente para el propietario del proyecto, y queda fuera de la oferta pública.
 
 ## Mensajes aprobados
 
@@ -14,7 +14,7 @@ Personas que quieren ordenar ingresos, gastos e inversiones; y personas que nece
 
 **Tus finanzas, más claras.**
 
-> Organizá tus ingresos y gastos, seguí tus inversiones y gestioná los gastos que compartís con otras personas. Todo desde un mismo lugar.
+> Organizá tus ingresos y gastos, llevá el control de tus cuentas y gestioná los gastos que compartís con otras personas. Todo desde un mismo lugar.
 
 Presentar primero la utilidad general de Bilancio y mostrar Gastos grupales como una capacidad importante dentro del producto.
 
@@ -52,12 +52,7 @@ Los estados describen la revisión documental y del código consultado en esta t
 
 ### Inversiones
 
-| Estado | Capacidad o claim | Alcance y evidencia |
-| --- | --- | --- |
-| Implementada y verificada | Registrar operaciones BUY/SELL y consultar posiciones derivadas e historial de operaciones. | [Dominio de inversiones](https://github.com/02Nico02/bilancio-backend/blob/main/docs/domain/investments.md), [API](https://github.com/02Nico02/bilancio-backend/blob/main/docs/api/investments.md), rutas de [Investments](https://github.com/02Nico02/bilancio-frontend/blob/main/src/app/features/investments/investments.routes.ts) y [test de rutas](https://github.com/02Nico02/bilancio-frontend/blob/main/src/app/features/investments/investments.routes.spec.ts). |
-| Implementada y verificada | Consultar concentración, asignación contra objetivos configurados y una medida de rendimiento por moneda. | [Allocation](https://github.com/02Nico02/bilancio-backend/blob/main/docs/domain/investment-allocation.md), [performance](https://github.com/02Nico02/bilancio-backend/blob/main/docs/domain/investment-performance.md), superficies frontend descritas en la [guía de Investments](https://github.com/02Nico02/bilancio-frontend/blob/main/docs/features/investments.md) y [test de la pantalla de rendimiento](https://github.com/02Nico02/bilancio-frontend/blob/main/src/app/features/investments/investment-performance-page.component.spec.ts). La metodología de rendimiento tiene límites documentados; no llamarla rendimiento real garantizado ni consolidarla entre monedas. |
-| Implementada con cobertura variable | Valuaciones y series de precio según las fuentes, fechas y cobertura disponibles. | [API de inversiones](https://github.com/02Nico02/bilancio-backend/blob/main/docs/api/investments.md) y [guía frontend](https://github.com/02Nico02/bilancio-frontend/blob/main/docs/features/investments.md) distinguen precios faltantes y coverage parcial. No prometer tiempo real ni cobertura universal. |
-| No disponible | Intermediación o ejecución de órdenes bursátiles desde Bilancio, asesoramiento de inversión o garantía de precio/cobertura para todo activo. | Bilancio permite registrar y analizar operaciones; no debe presentarse como intermediario ni asesor. |
+Inversiones es una capacidad privada, disponible únicamente para el propietario del proyecto. No se incluye en la navegación, las páginas, las demostraciones ni los mensajes comerciales de la website. Esta decisión limita la oferta pública y no cambia el producto interno ni su implementación en Angular o Symfony.
 
 ## Conversión y límites de claims
 
@@ -65,7 +60,7 @@ El frontend contiene las rutas [`/login` y `/registro`](https://github.com/02Nic
 
 Hasta entonces, no publicar una ruta como contrato comercial ni asegurar que el registro está abierto. Los CTA de autenticación van al frontend `app.bilancioapp.com`, nunca a la API. No usar «Solicitar acceso» sin un mecanismo real y verificado.
 
-No presentar como decisiones aprobadas precios, planes, gratuidad permanente, políticas legales, analítica, integraciones futuras, automatizaciones, promesas de seguridad no verificadas ni apertura pública. Algunas referencias de Stitch contienen textos sobre planes gratuitos, comisiones, «100%» de exactitud, mínima cantidad de pagos o promesas de privacidad; esos textos son contenido de mockup, no claims aprobados. No reutilizarlos sin decisión y evidencia independientes.
+No presentar como decisiones aprobadas precios, planes, gratuidad permanente, políticas legales, analítica, integraciones futuras, automatizaciones, promesas de seguridad no verificadas ni apertura pública. Algunas referencias de Stitch contienen textos sobre planes gratuitos, comisiones, «100%» de exactitud, mínima cantidad de pagos, inversiones o promesas de privacidad; esos textos son contenido de mockup, no claims aprobados. No reutilizarlos sin decisión y evidencia independientes.
 
 ## Demostraciones sintéticas
 

@@ -1,5 +1,15 @@
 ---
-import ContentPlaceholder from '../components/ContentPlaceholder.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const description = 'Esta sección no forma parte del sitio público de Bilancio.';
 ---
 
-<ContentPlaceholder title="Inversiones" />
+<BaseLayout title="Página no disponible" description={description}>
+  <meta slot="head" name="robots" content="noindex,follow" />
+  <meta slot="head" http-equiv="refresh" content="0;url=/" />
+  <section class="placeholder-page" aria-labelledby="unavailable-title">
+    <h1 id="unavailable-title">Esta página no está disponible.</h1>
+    <p>La sección que buscás no forma parte del sitio público.</p>
+    <p><a href="/">Volver al inicio</a></p>
+  </section>
+</BaseLayout>
