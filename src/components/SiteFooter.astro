@@ -1,0 +1,19 @@
+---
+const navigation = [
+  { href: '/', label: 'Inicio' },
+  { href: '/finanzas-personales/', label: 'Finanzas personales' },
+  { href: '/gastos-grupales/', label: 'Gastos grupales' },
+  { href: '/inversiones/', label: 'Inversiones' },
+  { href: '/como-funciona/', label: 'Cómo funciona' },
+];
+---
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <a class="brand" href="/" aria-label="Bilancio, inicio">Bilancio</a>
+    <nav aria-label="Secundaria">
+      {navigation.map((item) => <a href={item.href}>{item.label}</a>)}
+      <a href="https://app.bilancioapp.com">Ingresar</a>
+    </nav>
+  </div>
+</footer>
