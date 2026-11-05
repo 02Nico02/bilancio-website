@@ -17,7 +17,7 @@ Orden sugerido: Inicio, Finanzas personales, Gastos grupales y Cómo funciona. G
 
 No añadir blog, pricing, newsletter ni otras páginas comerciales en este alcance.
 
-La ruta heredada `/inversiones/` no es una página comercial. Mientras el build estático conserva la ruta por compatibilidad con el esqueleto de la #2, sirve un documento mínimo `noindex` que redirige de inmediato a `/` y ofrece un enlace de retorno accesible.
+La ruta `/inversiones/` no se genera: es una capacidad privada y no una página comercial. Una solicitud para esa ruta recibe la página estática 404, sin redirección ni contenido promocional.
 
 ## Jerarquía y destinos de CTA
 
