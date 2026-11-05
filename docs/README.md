@@ -25,6 +25,7 @@ Ante una discrepancia, verifica el comportamiento en el código y los tests. Dis
 
 - [Posicionamiento y claims](product/positioning.md): mensajes aprobados, inventario de funcionalidades con evidencias y estrategia de demostraciones sintéticas.
 - [Mapa de páginas y CTA](product/sitemap-and-ctas.md): arquitectura comercial prevista, conversión por estado de acceso y dependencias de #5/#6.
+- [Revisión de contenido legal](product/legal-content-review.md): auditoría documental de los textos de Angular, tratamiento evidenciado, pendientes de validación y propuesta para las páginas legales; no es contenido aprobado.
 
 ### Desarrollo
 
