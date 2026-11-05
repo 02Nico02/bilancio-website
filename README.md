@@ -18,7 +18,7 @@ Astro 7, TypeScript y CSS nativo con generación estática. Cloudflare Pages es 
 
 ## Estado
 
-La base Astro está preparada y la Home comercial está implementada en una primera etapa de la Issue #3. Las otras páginas comerciales continúan estructurales y se completarán en el mismo trabajo.
+Las cuatro páginas comerciales públicas están implementadas. Sus demostraciones financieras son ilustraciones conceptuales con datos sintéticos; antes del lanzamiento deben reemplazarse por recursos auténticos del producto. La infraestructura de publicación todavía no está configurada.
 
 ## Desarrollo local
 
@@ -46,7 +46,7 @@ npm run preview
 ## Estructura
 
 - `src/pages/`: rutas estáticas. La navegación sólo enlaza rutas existentes.
-- `src/layouts/BaseLayout.astro`: documento HTML, idioma, metadatos básicos, header, contenido y footer.
+- `src/layouts/BaseLayout.astro`: documento HTML, idioma, metadatos por página, canonical, Open Graph/Twitter, header, contenido y footer.
 - `src/components/`: navegación compartida y placeholder estructural.
 - `src/styles/global.css`: tokens visuales y estilos base responsive.
 - `src/assets/brand/`: logo oficial procesado y optimizado por Astro.
