@@ -12,8 +12,8 @@ Orden sugerido: Inicio, Finanzas personales, Gastos grupales y Cómo funciona. G
 | `/gastos-grupales` | Captar interés y explicar el flujo cotidiano de grupo, gasto, distribución, balance y sugerencia, diferenciando la liquidación manual. | **Crear cuenta**; nunca sugerir un pago ejecutado por Bilancio. |
 | `/finanzas-personales` | Explicar registro y organización de ingresos, gastos, cuentas, categorías, monedas e historial con los límites documentados. | **Crear cuenta**. |
 | `/como-funciona` | Recorrer el producto a nivel general y conectar finanzas personales y gastos grupales con demostraciones fieles y sintéticas. | **Crear cuenta**. |
-| `/privacidad` | Reservar la ruta para información de privacidad aplicable a la website. No redactar una política ficticia. | Sin CTA hasta que el contenido y revisión legal estén aprobados. |
-| `/terminos` | Reservar la ruta para términos aplicables a la website. No redactar términos ficticios. | Sin CTA hasta que el contenido y revisión legal estén aprobados. |
+
+El footer enlaza a la [Política de privacidad](https://app.bilancioapp.com/privacidad) y los [Términos de uso](https://app.bilancioapp.com/terminos) canónicos de la aplicación. No se generan rutas legales locales ni se incluyen en el sitemap de la website.
 
 No añadir blog, pricing, newsletter ni otras páginas comerciales en este alcance.
 
@@ -32,5 +32,5 @@ La ruta `/inversiones/` no se genera: es una capacidad privada y no una página 
 ## Pendientes de verificación para el handoff
 
 1. Issue #6 debe establecer un go/no-go humano para la operación pública y atender sus bloqueantes. La website no toma esa decisión ni modifica los controles de registro.
-2. Las páginas legales permanecen vacías de contenido hasta revisión y aprobación legal; los documentos legales existentes en la app no se copian automáticamente a la website.
+2. Antes del lanzamiento, verificar las versiones definitivas de los documentos legales de la aplicación y su accesibilidad pública; la website no mantiene copias.
 3. Las demostraciones de cada página deben contrastarse con la UI y el comportamiento existentes al momento de capturar; mantener fixtures sintéticos y no reconstruir estados mediante HTML ficticio.
