@@ -1,79 +1,66 @@
 # Preparación para publicar en Cloudflare Pages
 
-## Estado y alcance
+## Alcance y estado
 
-Esta guía describe pasos futuros. Al escribirla no existe un proyecto Cloudflare Pages conectado, no se modificó DNS, no se publicó el sitio ni se configuró Search Console. Cada acción productiva requiere autorización explícita del propietario.
+Esta guía prepara la Issue #21; no autoriza crear el proyecto, publicar ni modificar DNS, certificados o infraestructura. Se necesita autorización productiva explícita del propietario. La website es estática, pública e indexable; no contiene la aplicación Angular ni consume la API.
 
-El sitio no incorpora Schema.org/JSON-LD: por ahora no hay datos adicionales verificables (por ejemplo, información organizacional, comercial o de contacto) que justifiquen un marcado más allá del contenido visible y los metadatos sociales. No agregar ratings, reviews, precios ni atributos inferidos.
+V1 conserva las ilustraciones conceptuales HTML/CSS identificadas y sus datos sintéticos. Las capturas y videos auténticos son mejoras posteriores (#14–#19), no un bloqueo de V1. El footer enlaza a privacidad y términos canónicos de Angular; la website no mantiene copias. El registro conserva la aprobación administrativa gestionada por la aplicación, sin prometer acceso inmediato. Revisar los requisitos legales antes de captar usuarios: los enlaces no demuestran cumplimiento ni sustituyen la identificación y contacto del responsable.
 
-El layout genera title, description, canonical, Open Graph y Twitter/X por página. No define `og:image` ni `twitter:image`: hoy no existe un recurso social apropiado y aprobado. Revisar esta decisión si se produce una imagen de marca para compartir.
-
-## Build previsto
+## Configuración propuesta
 
 | Ajuste | Valor |
 | --- | --- |
-| Runtime de desarrollo y build | Node.js `22.23.4` y npm `10.9.9` |
-| Instalación reproducible | `npm ci` |
-| Comando de build | `npm run build` |
-| Directorio estático | `dist/` |
-| Dominio canónico | `https://bilancioapp.com` |
+| Integración Git | Solo `02Nico02/bilancio-website` |
+| Rama de producción | `main`, una vez que contenga el commit aprobado para publicar |
+| Desarrollo | `develop`; ramas no productivas como previews según controles de Pages |
+| Node.js / npm | `22.23.4` / `10.9.9`; `.nvmrc` y `.node-version` fijan Node |
+| Build | `npm run build` |
+| Salida | `dist/`, raíz del repositorio |
+| Canonical | `https://bilancioapp.com` |
 
-Al crear el proyecto, confirmar la branch de producción y conectar sólo este repositorio de la website. El build es estático e independiente de Angular, Symfony, API y base de datos. No añadir credenciales de producción para este sitio.
+Cloudflare instala dependencias automáticamente antes del comando de build. Confirmar en los logs que utiliza el lockfile y las versiones esperadas; para exigir `npm ci` explícitamente, usar `SKIP_DEPENDENCY_INSTALL=1` y el comando `npm ci && npm run build` en lugar del build simple. No omitir dependencias de desarrollo durante el build: Astro y las fuentes están declarados allí. El resultado es estático y no necesita Node, dependencias ni secretos en el servidor. Ver [imagen de build](https://developers.cloudflare.com/pages/configuration/build-image/) y [configuración de build](https://developers.cloudflare.com/pages/configuration/build-configuration/).
 
-## Preparación previa
+La integración Git puede desplegar automáticamente al conectar el proyecto o recibir pushes: configurar y activar únicamente en la ventana autorizada. `main` todavía debe recibir el contenido aprobado mediante el proceso Git habitual; no confundir el estado de `develop` con producción. Consultar [integración Git](https://developers.cloudflare.com/pages/get-started/git-integration/).
 
-- [ ] Revisar los cambios y el contenido del commit que se publicará; ejecutar `npm ci`, `npm run check` y `npm run build`.
-- [ ] Confirmar que el directorio de salida sea `dist/` y revisar el HTML generado, las cuatro páginas públicas, el sitemap y `robots.txt`.
-- [ ] Sustituir antes del lanzamiento las ilustraciones conceptuales por recursos auténticos del frontend Angular, preparados con datos sintéticos. No presentarlas como capturas reales.
-- [ ] Completar y revisar legalmente las páginas de privacidad y términos. No publicar políticas ficticias.
-- [ ] Resolver por separado analítica, privacidad y consentimiento aplicables. Esta web no incorpora tracking.
-- [ ] Revisar que los CTA de cuenta apunten al frontend `app.bilancioapp.com` (`/registro` y `/login`), nunca a la API; comprobar las rutas sin enviar formularios ni cambiar cuentas.
-- [ ] Inspeccionar el estado de los registros DNS existentes de `bilancioapp.com`, `www.bilancioapp.com`, `app.bilancioapp.com` y `api.bilancioapp.com`; guardar evidencia para rollback y no alterar los subdominios de aplicación o API.
-- [ ] Acordar una ventana de cambio y autorización explícita antes de conectar dominios o cambiar DNS.
+## Auditoría local y observaciones públicas
 
-## Dominio, HTTPS y publicación
+Verificado el 8 de noviembre de 2026 sobre `develop` actualizado y esta preparación:
 
-- [ ] Crear un proyecto Pages separado para `bilancio-website`; configurar `npm run build` y `dist/`.
-- [ ] Añadir `bilancioapp.com` como dominio principal y `www.bilancioapp.com` como alias con redirección permanente `301` al dominio principal, conservando ruta y query cuando corresponda.
-- [ ] Aplicar únicamente los cambios DNS requeridos por la configuración aprobada de Pages, después de respaldar y revisar los registros existentes. No tocar `app.bilancioapp.com` ni `api.bilancioapp.com`.
-- [ ] Esperar la emisión del certificado y verificar HTTPS en ambos dominios. Comprobar que HTTP redirija a HTTPS y que `www` llegue al apex en un único recorrido, sin bucles. Si hiciera falta una regla adicional, aplicarla sólo a los hosts de la website; no usar una configuración amplia que altere `app` o `api`.
-- [ ] Comprobar que `https://bilancioapp.com/` y las cuatro páginas públicas respondan correctamente; confirmar que rutas inexistentes, incluida `/inversiones/`, entreguen estado HTTP 404 con el documento `404.html`.
-- [ ] Revisar los enlaces de autenticación, los canonicals bajo el dominio principal, `/robots.txt` y `/sitemap-index.xml` en el sitio publicado.
+- `npm ci`, `npm run check` y `npm run build` con Node `22.23.4` y npm `10.9.9`: correctos; `dist/` contiene HTML, CSS, fuentes, imagen, favicon, robots y sitemap estáticos, sin JavaScript ni dependencias de runtime de aplicación.
+- Las cuatro páginas generan título, descripción, canonical y metadatos sociales; sus enlaces y recursos locales referenciados existen. El sitemap contiene solo las cuatro rutas comerciales y `robots.txt` permite rastreo. `404.html` contiene `noindex`.
+- La vista previa local respondió 200 para las cuatro rutas y 404 para una ruta inexistente y `/inversiones/`. Se revisaron las cabeceras de las cuatro páginas a 375 y 1440 px; la revisión no reemplaza pruebas completas de accesibilidad. Footer y foco de enlaces se comprobaron en #20.
+- Las pantallas de registro e ingreso y los documentos legales de Angular se mostraron sin iniciar sesión. No se enviaron formularios ni se verificó el flujo completo de registro o aprobación.
+- Una búsqueda por patrones habituales en `dist/` no encontró claves privadas ni tokens evidentes; esto no garantiza la ausencia de todo dato sensible. Las ilustraciones revisadas se presentan como conceptuales y sintéticas.
 
-Astro genera un `404.html` superior. Cloudflare Pages puede servir ese archivo para rutas inexistentes y conservar la respuesta de error. Mantenerlo en la raíz de `dist/` y comprobar el estado HTTP 404 tras publicar; no reemplazarlo por una redirección a Home ni asumir que mostrar una página de error garantiza el status correcto. Consultar la [documentación de Pages sobre manejo de rutas 404](https://developers.cloudflare.com/pages/configuration/serving-pages/).
+Consultas DNS y HTTP públicas desde el entorno de trabajo, en la misma fecha (resultados sujetos a cambios):
 
-## `pages.dev` y buscadores
+| Host | Observación |
+| --- | --- |
+| `bilancioapp.com` | Sin A/AAAA/CNAME observables en la consulta; HTTP y HTTPS no resolvieron. |
+| `www.bilancioapp.com` | Sin respuesta DNS en la consulta; HTTP y HTTPS no resolvieron. |
+| `app.bilancioapp.com` | A `104.21.51.136`, `172.67.181.37`; AAAA `2606:4700:3031::ac43:b525`, `2606:4700:3030::6815:3388`. HTTP redirigió 301 a HTTPS; HTTPS respondió 200 con TLS válido en la consulta. |
+| `api.bilancioapp.com` | CNAME `r9t47igd.up.railway.app`; HTTP redirigió 301 a HTTPS y HTTPS respondió 302 a `/admin`, con TLS válido en la consulta. |
 
-- [ ] Revisar la URL `*.pages.dev` de producción y las URLs de preview: respuesta, canonical y encabezados de robots. No asumir que el canonical por sí solo evita toda indexación duplicada.
-- [ ] Antes de lanzamiento, definir cómo evitar que la URL `pages.dev` compita con `https://bilancioapp.com` (por ejemplo, redirección o directiva `noindex` según lo que permita y soporte la configuración elegida). Verificar el comportamiento desplegado.
-- [ ] Comprobar que el sitemap sólo incluya `/`, `/gastos-grupales/`, `/finanzas-personales/` y `/como-funciona/`; no debe incluir 404, Inversiones ni páginas legales vacías.
-- [ ] Crear/verificar la propiedad de Search Console por el método aprobado y enviar `https://bilancioapp.com/sitemap-index.xml`.
-- [ ] Inspeccionar algunas URLs, canonicals, robots y respuestas HTTP en Search Console. La indexación y su plazo no están garantizados.
+Las respuestas DNS públicas no permiten conocer todos los registros, proxy, reglas, permisos, certificados configurados, origen ni dependencias internas de la zona. No se inspeccionó la cuenta de Cloudflare o Railway. No asumir que el apex esté libre ni que la configuración existente sea segura para cambiarla: el propietario debe inventariarla y respaldarla antes de actuar. No cambiar `app` ni `api`, sus registros o reglas; evitar reglas de zona completas que los afecten.
 
-`robots.txt` permite el rastreo público y anuncia el sitemap; no es control de acceso ni reemplaza `noindex`. Las páginas de error llevan `noindex` desde su HTML.
+## Pasos pendientes para el propietario
 
-El sitemap se genera durante el build con la [integración oficial de Astro](https://docs.astro.build/en/guides/integrations-guide/sitemap/) y una lista permitida de cuatro páginas públicas.
+### Antes de autorizar
 
-## Validación posterior
+- [ ] Revisar y aprobar el commit a publicar, la decisión operativa de registro (#6), los requisitos legales, identidad/contacto del responsable y la versión definitiva de los documentos de Angular (frontend #416).
+- [ ] Inventariar zona DNS, nameservers, registros de los cuatro hosts, reglas, certificados y servicio actual; conservar evidencia y un plan de reversión. El apex de Pages requiere zona Cloudflare y nameservers de Cloudflare: evaluar cualquier cambio de delegación y su impacto en todos los subdominios antes de decidir. Ver [dominios personalizados](https://developers.cloudflare.com/pages/configuration/custom-domains/).
+- [ ] Confirmar que `main` contiene la versión aprobada y acordar ventana y autorización expresa para la conexión y el primer despliegue.
 
-- [ ] Repetir pruebas de Home, páginas públicas, CTA y 404 en desktop y mobile.
-- [ ] Verificar redirecciones HTTP/HTTPS, `www` al dominio principal, certificado TLS, canonicals y ausencia de bucles.
-- [ ] Confirmar status 404 de una ruta aleatoria y `/inversiones/`.
-- [ ] Confirmar que sitemap y robots sean accesibles y tengan el dominio principal correcto.
-- [ ] Revisar en Search Console errores de rastreo e indexación; conservar evidencia del estado inicial.
+### Tras autorización productiva
+
+- [ ] Conectar solo este repositorio a Pages, seleccionar `main` y los parámetros de build propuestos. Revisar logs, instalación y versión de npm. Limitar previews si corresponde; un push puede provocar despliegues automáticos.
+- [ ] Verificar preview de `develop` y de PR: Pages documenta `X-Robots-Tag: noindex` por defecto en previews. Confirmar el encabezado real con `curl -I`; el canonical por sí solo no evita duplicados. Ver [previews](https://developers.cloudflare.com/pages/configuration/preview-deployments/).
+- [ ] Tras validar el dominio personalizado, evitar indexación duplicada del host de producción `proyecto.pages.dev`, preferentemente mediante la [redirección nativa documentada](https://developers.cloudflare.com/pages/how-to/redirect-to-custom-domain/). Alcanzar solo el host de producción; no redirigir ni romper las URLs de preview. Verificar ruta y query y que no haya bucles.
+- [ ] Configurar apex y `www` con el alcance mínimo aprobado. Para `www`, considerar la [redirección 301 documentada](https://developers.cloudflare.com/pages/how-to/www-redirect/) con path y query preservados, limitada al host exacto. Verificar cualquier registro y regla antes de aplicarlos; no alterar `app` ni `api`.
+- [ ] Esperar emisión de certificados y comprobar HTTPS de apex y `www`, redirección HTTP→HTTPS y `www`→apex sin bucles, con ruta y query. Repetir comprobaciones de `app` y `api` para detectar regresiones.
+- [ ] Comprobar las cuatro rutas, CTA y legales, recursos, canonical, robots y sitemap; probar una ruta aleatoria y `/inversiones/` con HTTP 404 real. La presencia de `404.html` en la raíz evita el fallback SPA de Pages, pero el estado desplegado debe verificarse. Ver [serving Pages](https://developers.cloudflare.com/pages/configuration/serving-pages/).
+- [ ] Verificar la propiedad en Google Search Console, enviar `https://bilancioapp.com/sitemap-index.xml` y revisar cobertura y canonicals. La indexación y sus plazos no están garantizados.
 
 ## Rollback
 
-1. Si el problema está en el contenido o build, revertir el commit responsable, generar y revisar un nuevo build y publicar mediante el proceso aprobado. Como alternativa, una persona autorizada puede seleccionar una implementación de producción exitosa anterior desde Deployments y ejecutar el rollback; los previews no son destinos válidos. Verificar después las rutas, CTAs y el estado 404. Seguir la [guía oficial de rollback de Pages](https://developers.cloudflare.com/pages/configuration/rollbacks/).
-2. Si el problema está en un dominio o DNS, aplicar sólo el cambio de reversión acordado en la ventana autorizada, usando el inventario y evidencia previos. No editar registros de `app` o `api` como parte de una reversión de la website.
-3. Confirmar HTTPS, redirecciones, contenido y respuestas HTTP después de cualquier rollback. Registrar qué se revirtió y quién autorizó la acción.
-
-## Decisiones todavía pendientes
-
-- Crear/conectar Pages, configurar dominios, HTTPS y DNS.
-- Definir comportamiento final de `pages.dev`.
-- Configurar/verificar Search Console y evaluar indexación real.
-- Aprobar contenido legal, analítica y requisitos de consentimiento.
-- Reemplazar las ilustraciones conceptuales por recursos auténticos con datos sintéticos.
-
-Esta checklist no ejecuta ni autoriza las tareas pendientes. La indexación de buscadores no se puede garantizar.
+Si falla el contenido, una persona autorizada puede revertir el commit y desplegar de nuevo o seleccionar un despliegue de producción exitoso anterior en Pages; los previews no son destinos de rollback. En el primer despliegue puede no existir una versión anterior. Ver [rollbacks](https://developers.cloudflare.com/pages/configuration/rollbacks/). Para un problema DNS, usar el inventario previo y el procedimiento aprobado sin modificar `app` ni `api`; comprobar después TLS, redirecciones, rutas y servicios existentes.

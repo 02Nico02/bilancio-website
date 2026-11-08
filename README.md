@@ -18,7 +18,7 @@ Astro 7, TypeScript y CSS nativo con generación estática. Cloudflare Pages es 
 
 ## Estado
 
-Las cuatro páginas comerciales públicas están implementadas. Sus demostraciones financieras son ilustraciones conceptuales con datos sintéticos; antes del lanzamiento deben reemplazarse por recursos auténticos del producto. La infraestructura de publicación todavía no está configurada.
+Las cuatro páginas comerciales públicas están implementadas. Sus demostraciones financieras son ilustraciones conceptuales con datos sintéticos, aptas para V1; los recursos auténticos del producto son una mejora posterior. La configuración efectiva de publicación debe verificarse antes del lanzamiento.
 
 ## Desarrollo local
 
