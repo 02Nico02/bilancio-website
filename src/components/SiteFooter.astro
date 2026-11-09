@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/brand/logo-bilancio.png';
+import { AUTH_URLS } from '../config/auth';
+
+const navigation = [
+  { href: '/', label: 'Inicio' },
+  { href: '/finanzas-personales/', label: 'Finanzas personales' },
+  { href: '/gastos-grupales/', label: 'Gastos grupales' },
+  { href: '/como-funciona/', label: 'Cómo funciona' },
+];
+---
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <a class="brand" href="/" aria-label="Bilancio, inicio">
+      <Image src={logo} width={144} height={48} format="webp" quality={88} alt="" />
+    </a>
+    <nav aria-label="Secundaria">
+      {navigation.map((item) => <a href={item.href}>{item.label}</a>)}
+      <a href={AUTH_URLS.register}>Crear cuenta</a>
+      <a href={AUTH_URLS.login}>Ingresar</a>
+      <a href="https://app.bilancioapp.com/privacidad">Política de privacidad</a>
+      <a href="https://app.bilancioapp.com/terminos">Términos de uso</a>
+    </nav>
+  </div>
+</footer>

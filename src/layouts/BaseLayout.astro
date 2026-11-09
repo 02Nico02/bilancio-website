@@ -1,0 +1,54 @@
+---
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  noindex?: boolean;
+}
+
+const { title, description, noindex = false } = Astro.props;
+const site = Astro.site ?? new URL('https://bilancioapp.com');
+const canonicalUrl = new URL(Astro.url.pathname, site);
+const fullTitle = `${title} | Bilancio`;
+---
+
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#fcf9f5" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    {!noindex && <link rel="sitemap" href="/sitemap-index.xml" />}
+    {noindex ? (
+      <meta name="robots" content="noindex,follow" />
+    ) : (
+      <>
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Bilancio" />
+        <meta property="og:locale" content="es_AR" />
+        <meta property="og:title" content={fullTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={fullTitle} />
+        <meta name="twitter:description" content={description} />
+      </>
+    )}
+    <title>{fullTitle}</title>
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Ir al contenido</a>
+    <SiteHeader />
+    <main id="contenido" class="site-main">
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>

@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Página no encontrada"
+  description="La página que buscás no está disponible."
+  noindex
+>
+  <section class="placeholder-page" aria-labelledby="not-found-title">
+    <p class="eyebrow">Error 404</p>
+    <h1 id="not-found-title">Esta página no está disponible.</h1>
+    <p>Puede que el enlace esté desactualizado o que la dirección tenga un error.</p>
+    <p><a class="button button--primary" href="/">Volver al inicio</a></p>
+  </section>
+</BaseLayout>
