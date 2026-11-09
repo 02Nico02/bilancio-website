@@ -18,7 +18,7 @@ Astro 7, TypeScript y CSS nativo con generación estática. Cloudflare Pages es 
 
 ## Estado
 
-Las cuatro páginas comerciales públicas están implementadas. Sus demostraciones financieras son ilustraciones conceptuales con datos sintéticos, aptas para V1; los recursos auténticos del producto son una mejora posterior. La configuración efectiva de publicación debe verificarse antes del lanzamiento.
+Las cuatro páginas comerciales públicas están implementadas. El hero de Home muestra una captura auténtica del Dashboard con datos sintéticos; otras demostraciones siguen siendo ilustraciones conceptuales aptas para V1. La configuración efectiva de publicación debe verificarse antes del lanzamiento.
 
 ## Desarrollo local
 
@@ -66,3 +66,5 @@ El logo fuente (`bilancio-frontend/public/logo-bilancio.png`) y el favicon (`bil
 
 - [AGENTS.md](AGENTS.md): convenciones y router contextual para agentes.
 - [Índice documental](docs/README.md): fuentes de verdad y navegación de la documentación.
+
+La captura del hero procede del escenario sintético `showcase:home` de [frontend #420](https://github.com/02Nico02/bilancio-frontend/pull/426). La versión de escritorio recorta el panel completo de flujo mensual; la móvil conserva la captura completa. Ambas se convierten a WebP sin pérdida y mantienen ARS y USD separados.

@@ -21,35 +21,13 @@ const description =
     </div>
 
     <div class="home-hero__visual">
-      <figure class="demo-window" aria-label="Vista de ejemplo de finanzas personales, con datos sintéticos">
-        <div class="demo-window__topbar" aria-hidden="true">
-          <span></span><span></span><span></span>
-          <span class="demo-window__app-name">BILANCIO <i>·</i> RESUMEN DEL MES</span>
-          <span class="demo-window__period">Octubre 2026</span>
-        </div>
-        <div class="demo-window__body">
-          <div class="demo-window__heading">
-            <div>
-              <p class="demo-label">Flujo de caja</p>
-              <h2>Tu mes, de un vistazo</h2>
-            </div>
-            <span class="demo-window__currency">ARS</span>
-          </div>
-          <div class="demo-metrics">
-            <div><span>Ingresos</span><strong>+$ 1.280.000</strong></div>
-            <div><span>Gastos</span><strong class="demo-negative">−$ 842.300</strong></div>
-            <div class="demo-metrics__result"><span>Resultado del período</span><strong>+$ 437.700</strong></div>
-          </div>
-          <div class="demo-movements">
-            <div class="demo-movements__heading"><span>Movimientos recientes</span><span>Importe</span></div>
-            <div><span class="movement-mark movement-mark--income" aria-hidden="true">↗</span><span class="demo-movement-name">Honorarios</span><span>+$ 650.000</span></div>
-            <div><span class="movement-mark" aria-hidden="true">↘</span><span class="demo-movement-name">Alquiler</span><span>−$ 380.000</span></div>
-            <div><span class="movement-mark" aria-hidden="true">↘</span><span class="demo-movement-name">Supermercado</span><span>−$ 84.500</span></div>
-          </div>
-        </div>
-        <p class="demo-caption">Ilustración conceptual · datos sintéticos</p>
+      <figure class="home-capture">
+        <picture>
+          <source media="(max-width: 42rem)" srcset="/images/resumen-home-mobile.webp" width="390" height="930" />
+          <img src="/images/resumen-home-desktop.webp" width="1092" height="373" fetchpriority="high" loading="eager" decoding="async" alt="Resumen de flujo mensual de Bilancio en octubre: ingresos, gastos y resultado neto, separados en pesos y dólares." />
+        </picture>
+        <figcaption>Dashboard de Bilancio · octubre 2026 · datos sintéticos</figcaption>
       </figure>
-      <div class="hero-note"><span aria-hidden="true">✳</span><span>Una mirada más simple<br />a tus movimientos</span></div>
     </div>
   </section>
 
