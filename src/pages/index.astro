@@ -78,25 +78,12 @@ const description =
         <a class="button button--light" href="/gastos-grupales/">Descubrí los gastos grupales <span aria-hidden="true">→</span></a>
       </div>
 
-      <figure class="group-demo" aria-label="Demostración sintética de gastos compartidos">
-        <div class="group-demo__top">
-          <div><span class="demo-label">GRUPO · VIAJE</span><h3>Escapada a Bariloche</h3><p>Abierto <span aria-hidden="true">·</span> ARS</p></div>
-          <span class="group-demo__people" aria-label="Tres participantes"><span>A</span><span>B</span><span>C</span></span>
-        </div>
-        <div class="group-demo__expense"><span class="expense-icon" aria-hidden="true">⌂</span><span><strong>Casa de alquiler</strong><small>Pagó Ana · repartido entre 3</small></span><strong>$ 18.000</strong></div>
-        <div class="group-demo__balance">
-          <div class="group-demo__section-title"><strong>Balances</strong><span>Según gastos registrados</span></div>
-          <div class="balance-row"><span><i class="avatar avatar--green">A</i>Ana</span><strong class="positive">+$ 12.000</strong></div>
-          <div class="balance-row"><span><i class="avatar avatar--blue">B</i>Beto</span><strong>−$ 6.000</strong></div>
-          <div class="balance-row"><span><i class="avatar avatar--rose">C</i>Caro</span><strong>−$ 6.000</strong></div>
-        </div>
-        <div class="group-demo__suggestions">
-          <div class="group-demo__section-title"><strong>Sugerencias para saldar</strong><span aria-hidden="true">↗</span></div>
-          <p><span>Beto</span><span class="suggestion-arrow" aria-hidden="true">→</span><span>Ana</span><strong>$ 6.000</strong></p>
-          <p><span>Caro</span><span class="suggestion-arrow" aria-hidden="true">→</span><span>Ana</span><strong>$ 6.000</strong></p>
-        </div>
-        <p class="group-demo__disclaimer">Las sugerencias orientan; no son transferencias realizadas.</p>
-        <p class="demo-caption">Ilustración conceptual · datos sintéticos</p>
+      <figure class="group-capture">
+        <picture>
+          <source media="(max-width: 42rem)" srcset="/images/gastos-grupales-mobile.webp" width="358" height="953" />
+          <img src="/images/gastos-grupales-desktop.webp" width="1092" height="620" loading="lazy" decoding="async" alt="Grupo Escapada a la Patagonia con tres participantes. Balances: Sofía Benítez +29.000 ARS, Mateo Ríos −10.000 ARS y Julia Acosta −19.000 ARS. Dos sugerencias para saldar, no transferencias realizadas." />
+        </picture>
+        <figcaption>Gastos grupales · grupo y balances · datos sintéticos</figcaption>
       </figure>
     </div>
   </section>
