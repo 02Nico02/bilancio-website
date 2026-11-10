@@ -763,3 +763,31 @@
     scroll-behavior: auto;
   }
 }
+
+.group-showcase-capture {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #e6e4de;
+  border-radius: 0.6rem;
+  background: #fff;
+  box-shadow: 0 1.2rem 2.8rem rgb(28 28 26 / 8%), 0 0.2rem 0.6rem rgb(28 28 26 / 3%);
+}
+
+.group-showcase-capture img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1092 / 620;
+}
+
+.group-showcase-capture figcaption {
+  padding: 0.7rem 1rem;
+  color: #59645c;
+  background: #fbfaf8;
+  font-size: 0.7rem;
+  text-align: right;
+}
+
+@media (max-width: 42rem) {
+  .group-showcase-capture img { aspect-ratio: 358 / 1000; }
+}

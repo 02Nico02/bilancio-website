@@ -1,5 +1,4 @@
 ---
-import GroupExpenseIllustration from '../components/GroupExpenseIllustration.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { AUTH_URLS } from '../config/auth';
 import '../styles/shared-expenses.css';
@@ -75,7 +74,13 @@ const distinctions = [
         <p class="shared-hero__note">Un grupo, sus gastos y balances en la misma moneda.</p>
       </div>
       <div class="shared-hero__visual">
-        <GroupExpenseIllustration />
+        <figure class="group-showcase-capture">
+          <picture>
+            <source media="(max-width: 42rem)" srcset="/images/gastos-detalle-mobile.webp" width="358" height="1000" />
+            <img src="/images/gastos-detalle-desktop.webp" width="1092" height="620" loading="eager" fetchpriority="high" decoding="async" alt="Detalle de un grupo con balances de +29.000, −10.000 y −19.000 ARS y dos sugerencias para saldar de 10.000 y 19.000 ARS." />
+          </picture>
+          <figcaption>Detalle de un grupo · datos sintéticos · las sugerencias no son pagos ejecutados</figcaption>
+        </figure>
       </div>
     </section>
 
