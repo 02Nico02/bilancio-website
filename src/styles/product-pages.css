@@ -590,6 +590,11 @@
 
   .product-benefit-grid,
   .product-steps__list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .product-benefit-grid,
+  .product-steps__list {
     margin-block-start: 1.65rem;
   }
 
