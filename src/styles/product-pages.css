@@ -826,3 +826,8 @@
     height: 2.5rem;
   }
 }
+
+.finance-showcase { min-width: 0; margin: 0; overflow: hidden; border: 1px solid #e6e4de; border-radius: .65rem; background: #fff; box-shadow: 0 1.2rem 2.8rem rgb(28 28 26 / 8%), 0 .2rem .6rem rgb(28 28 26 / 3%); }
+.finance-showcase img { display: block; width: 100%; height: auto; aspect-ratio: 1260 / 740; object-fit: cover; }
+.finance-showcase figcaption { padding: .7rem 1rem; color: #526158; background: #f8f7f4; font-size: .68rem; text-align: right; }
+@media (max-width: 42rem) { .finance-showcase img { aspect-ratio: 390 / 1390; } }

@@ -40,25 +40,12 @@ const benefits = [
         </div>
       </div>
 
-      <figure class="finance-illustration" aria-labelledby="finance-illustration-title">
-        <div class="finance-illustration__heading">
-          <div>
-            <p class="finance-illustration__eyebrow">Movimientos · ejemplo</p>
-            <h2 id="finance-illustration-title">Un registro más claro</h2>
-          </div>
-          <span class="currency-pill">ARS</span>
-        </div>
-        <div class="finance-account"><span aria-hidden="true">◉</span><span>Cuenta principal</span><span>En pesos</span></div>
-        <ul class="finance-movements" aria-label="Movimientos sintéticos en pesos">
-          <li><span class="finance-movement__mark finance-movement__mark--income" aria-hidden="true">↗</span><span class="finance-movement__copy"><strong>Honorarios</strong><small>Ingreso · Trabajo</small></span><strong class="finance-amount finance-amount--income">+ ARS 650.000</strong></li>
-          <li><span class="finance-movement__mark" aria-hidden="true">↘</span><span class="finance-movement__copy"><strong>Alquiler</strong><small>Gasto · Vivienda</small></span><strong class="finance-amount">− ARS 380.000</strong></li>
-          <li><span class="finance-movement__mark" aria-hidden="true">↘</span><span class="finance-movement__copy"><strong>Supermercado</strong><small>Gasto · Comida</small></span><strong class="finance-amount">− ARS 84.500</strong></li>
-        </ul>
-        <div class="finance-illustration__currencies" aria-label="Las monedas se consultan por separado">
-          <span><strong>ARS</strong> movimientos en pesos</span>
-          <span><strong>USD</strong> movimientos en dólares</span>
-        </div>
-        <figcaption>Ilustración conceptual · datos sintéticos · no es una captura de la aplicación.</figcaption>
+<figure class="finance-showcase">
+        <picture>
+          <source media="(max-width: 42rem)" srcset="/images/finanzas-movimientos-mobile.webp" width="390" height="1390" />
+          <img src="/images/finanzas-movimientos-desktop.webp" width="1260" height="740" loading="eager" fetchpriority="high" decoding="async" alt="Movimientos sintéticos de octubre de 2026 en ARS: ingresos por 420.000, gastos por 234.200 y neto de 185.800; listado con fechas, categorías, tipos y cuenta." />
+        </picture>
+        <figcaption>Captura de Bilancio · octubre de 2026 · datos sintéticos · filtro ARS</figcaption>
       </figure>
     </section>
 
