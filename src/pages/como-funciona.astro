@@ -6,14 +6,10 @@ import '../styles/product-pages.css';
 const description =
   'Conocé cómo Bilancio reúne tus finanzas personales y los gastos que compartís, desde el registro cotidiano hasta una consulta más clara.';
 
-const personalSteps = [
-  { number: '01', title: 'Organizá tus cuentas', text: 'Elegí cuentas y categorías para ubicar tus ingresos y gastos.' },
-  { number: '02', title: 'Registrá tus movimientos', text: 'Anotá cada movimiento y volvé a consultarlo desde el listado.' },
-];
-
-const groupSteps = [
-  { number: '01', title: 'Armá un grupo', text: 'Creá un espacio para un viaje, una salida u otro plan compartido.' },
-  { number: '02', title: 'Repartí los gastos', text: 'Registrá quién pagó, distribuí importes y revisá los balances.' },
+const moments = [
+  { number: '01', title: 'Organizá tus movimientos', text: 'Consultá ingresos y gastos por fecha, categoría y cuenta, con cada moneda por separado.', key: 'movements', desktop: '/images/finanzas-movimientos-desktop.webp', mobile: '/images/finanzas-movimientos-mobile.webp', alt: 'Cinco movimientos sintéticos de octubre de 2026 en ARS, con fecha, descripción, tipo, categoría y cuenta.' },
+  { number: '02', title: 'Entendé el resultado del mes', text: 'Revisá el resultado de tus cuentas y consultá los totales en ARS y USD por separado.', key: 'dashboard', desktop: '/images/resumen-home-desktop.webp', mobile: '/images/resumen-home-mobile.webp', alt: 'Dashboard sintético con resultados en ARS y USD presentados por separado.' },
+  { number: '03', title: 'Compartí gastos', text: 'Revisá los gastos del grupo y sus balances. Las sugerencias para saldar no son pagos ejecutados.', key: 'groups', desktop: '/images/gastos-detalle-desktop.webp', mobile: '/images/gastos-detalle-mobile.webp', alt: 'Grupo sintético Escapada a la Patagonia, con tres integrantes, gastos y balances en ARS.' },
 ];
 ---
 
@@ -21,8 +17,8 @@ const groupSteps = [
   <div class="product-page how-it-works-page">
     <section class="product-hero how-hero" aria-labelledby="how-page-title">
       <div class="product-hero__copy">
-        <p class="eyebrow">Dos formas de llevar tus cuentas</p>
-        <h1 id="how-page-title">Lo personal y lo compartido, más claro.</h1>
+        <p class="eyebrow">Tres capacidades de Bilancio</p>
+        <h1 id="how-page-title">Tus cuentas, más claras.</h1>
         <p class="product-hero__description">
           Bilancio te ayuda a registrar tus movimientos cotidianos y a organizar gastos con otras personas desde la misma aplicación.
         </p>
@@ -31,50 +27,23 @@ const groupSteps = [
           <a class="text-link" href="#dos-formas">Descubrí el recorrido <span aria-hidden="true">↓</span></a>
         </div>
       </div>
-      <div class="how-hero__visual" aria-label="Las dos áreas públicas de Bilancio">
-        <article class="how-path-card how-path-card--personal">
-          <span class="how-path-card__index">01</span>
-          <span class="how-path-card__symbol" aria-hidden="true">◷</span>
-          <p class="eyebrow">Finanzas personales</p>
-          <h2>Lo que entra y sale de tus cuentas.</h2>
-          <span class="how-path-card__footer">Ingresos · gastos · categorías</span>
-        </article>
-        <article class="how-path-card how-path-card--groups">
-          <span class="how-path-card__index">02</span>
-          <span class="how-path-card__symbol" aria-hidden="true">◎</span>
-          <p class="eyebrow">Gastos grupales</p>
-          <h2>Lo que compartís con otras personas.</h2>
-          <span class="how-path-card__footer">Grupos · gastos · balances</span>
-        </article>
-        <p class="how-hero__caption">Ilustración conceptual · dos áreas del producto.</p>
-      </div>
+      <p class="how-hero__caption">Explorá distintas herramientas según lo que quieras organizar.</p>
     </section>
 
-    <section class="how-paths" id="dos-formas" aria-labelledby="how-paths-title">
+    <section class="how-paths how-moments" id="dos-formas" aria-labelledby="how-paths-title">
       <div class="product-section-heading">
-        <p class="eyebrow">Un producto, dos situaciones cotidianas</p>
-        <h2 id="how-paths-title">Elegí qué necesitás ordenar.</h2>
-        <p>Podés usar Bilancio para tu registro personal, para los gastos de un grupo o para ambas cosas.</p>
+        <p class="eyebrow">Un producto, distintas situaciones</p>
+        <h2 id="how-paths-title">Tres formas de entender tus cuentas.</h2>
+        <p>Son capacidades independientes para consultar y organizar tu información.</p>
       </div>
 
-      <div class="how-path-grid">
-        <article class="how-path-detail how-path-detail--personal" aria-labelledby="personal-path-title">
-          <p class="eyebrow">En tus finanzas personales</p>
-          <h3 id="personal-path-title">Una vista de tus movimientos.</h3>
-          <ol>
-            {personalSteps.map((step) => <li><span>{step.number}</span><div><h4>{step.title}</h4><p>{step.text}</p></div></li>)}
-          </ol>
-          <a class="text-link" href="/finanzas-personales/">Conocer finanzas personales <span aria-hidden="true">→</span></a>
-        </article>
-
-        <article class="how-path-detail how-path-detail--groups" aria-labelledby="group-path-title">
-          <p class="eyebrow">Con otras personas</p>
-          <h3 id="group-path-title">Las cuentas del plan, en común.</h3>
-          <ol>
-            {groupSteps.map((step) => <li><span>{step.number}</span><div><h4>{step.title}</h4><p>{step.text}</p></div></li>)}
-          </ol>
-          <a class="text-link" href="/gastos-grupales/">Conocer gastos grupales <span aria-hidden="true">→</span></a>
-        </article>
+      <div class="how-moments__list">
+        {moments.map((moment) => (
+          <article class={`how-moment how-moment--${moment.key}`}>
+            <div class="how-moment__copy"><p class="eyebrow">Momento {moment.number}</p><h3>{moment.title}</h3><p>{moment.text}</p></div>
+            <figure class="how-moment__capture"><picture><source media="(max-width: 42rem)" srcset={moment.mobile} /><img src={moment.desktop} loading={moment.number === '01' ? 'eager' : 'lazy'} fetchpriority={moment.number === '01' ? 'high' : 'auto'} decoding="async" alt={moment.alt} /></picture><figcaption>Captura auténtica de Bilancio · datos sintéticos</figcaption></figure>
+          </article>
+        ))}
       </div>
     </section>
 

@@ -494,6 +494,17 @@
   background: #f3f0eb;
 }
 
+.how-moments__list { display: grid; gap: clamp(3rem, 7vw, 6rem); }
+.how-moment { display: grid; grid-template-columns: minmax(15rem, .72fr) minmax(0, 1.28fr); align-items: center; gap: clamp(2rem, 5vw, 5rem); }
+.how-moment:nth-child(even) .how-moment__copy { order: 2; }
+.how-moment__copy { max-width: 28rem; }
+.how-moment__copy h3 { margin: 0; color: var(--color-primary); font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3.2rem); line-height: 1.08; }
+.how-moment__copy > p:last-child { color: var(--color-text-muted); line-height: 1.75; }
+.how-moment__capture { min-width: 0; margin: 0; overflow: hidden; border: 1px solid #e6e4de; border-radius: .65rem; background: #fff; box-shadow: 0 1.2rem 2.8rem rgb(28 28 26 / 8%); }
+.how-moment__capture img { display: block; width: 100%; height: auto; }
+.how-moment__capture figcaption { padding: .65rem 1rem; color: #526158; background: #f8f7f4; font-size: .68rem; text-align: right; }
+@media (max-width: 58rem) { .how-moment { grid-template-columns: minmax(0,1fr); gap: 1.25rem; } .how-moment:nth-child(even) .how-moment__copy { order: initial; } }
+
 .how-path-grid {
   margin-block-start: 2.3rem;
   display: grid;
