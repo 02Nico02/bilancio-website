@@ -474,12 +474,19 @@
 }
 
 @media (max-width: 64rem) {
+  .product-hero { gap: 2.25rem; }
   .product-hero h1 {
     font-size: clamp(3rem, 5.5vw, 4.2rem);
   }
 }
 
 @media (max-width: 58rem) {
+  .product-hero {
+    min-height: auto;
+    padding-block: 3.5rem 4rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.25rem;
+  }
   .product-hero__copy {
     max-width: 44rem;
   }
@@ -518,6 +525,7 @@
 }
 
 @media (max-width: 42rem) {
+  .product-hero { padding-block: 3rem 3.5rem; gap: 1.7rem; }
   .product-hero h1 {
     font-size: clamp(2.8rem, 12vw, 3.5rem);
   }
