@@ -7,9 +7,9 @@ const description =
   'Conocé cómo Bilancio reúne tus finanzas personales y los gastos que compartís, desde el registro cotidiano hasta una consulta más clara.';
 
 const moments = [
-  { number: '01', title: 'Organizá tus movimientos', text: 'Consultá ingresos y gastos por fecha, categoría y cuenta, con cada moneda por separado.', key: 'movements', desktop: '/images/finanzas-movimientos-desktop.webp', mobile: '/images/finanzas-movimientos-mobile.webp', alt: 'Cinco movimientos sintéticos de octubre de 2026 en ARS, con fecha, descripción, tipo, categoría y cuenta.' },
-  { number: '02', title: 'Entendé el resultado del mes', text: 'Revisá el resultado de tus cuentas y consultá los totales en ARS y USD por separado.', key: 'dashboard', desktop: '/images/resumen-home-desktop.webp', mobile: '/images/resumen-home-mobile.webp', alt: 'Dashboard sintético con resultados en ARS y USD presentados por separado.' },
-  { number: '03', title: 'Compartí gastos', text: 'Revisá los gastos del grupo y sus balances. Las sugerencias para saldar no son pagos ejecutados.', key: 'groups', desktop: '/images/gastos-detalle-desktop.webp', mobile: '/images/gastos-detalle-mobile.webp', alt: 'Grupo sintético Escapada a la Patagonia, con tres integrantes, gastos y balances en ARS.' },
+  { number: '01', title: 'Organizá tus movimientos', text: 'Consultá ingresos y gastos por fecha, categoría y cuenta, con cada moneda por separado.', key: 'movements', desktop: '/images/finanzas-movimientos-desktop.webp', mobile: '/images/finanzas-movimientos-mobile.webp', width: 1245, height: 560, mobileWidth: 380, mobileHeight: 1060, alt: 'Cinco movimientos sintéticos de octubre de 2026 en ARS, con fecha, descripción, tipo, categoría y cuenta.' },
+  { number: '02', title: 'Entendé el resultado del mes', text: 'Revisá el resultado de tus cuentas y consultá los totales en ARS y USD por separado.', key: 'dashboard', desktop: '/images/resumen-home-desktop.webp', mobile: '/images/resumen-home-mobile.webp', width: 1092, height: 373, mobileWidth: 390, mobileHeight: 930, alt: 'Dashboard sintético con resultados en ARS y USD presentados por separado.' },
+  { number: '03', title: 'Compartí gastos', text: 'Revisá los gastos del grupo y sus balances. Las sugerencias para saldar no son pagos ejecutados.', key: 'groups', desktop: '/images/gastos-detalle-desktop.webp', mobile: '/images/gastos-detalle-mobile.webp', width: 1092, height: 620, mobileWidth: 358, mobileHeight: 1000, alt: 'Grupo sintético Escapada a la Patagonia, con tres integrantes, gastos y balances en ARS.' },
 ];
 ---
 
@@ -41,7 +41,7 @@ const moments = [
         {moments.map((moment) => (
           <article class={`how-moment how-moment--${moment.key}`}>
             <div class="how-moment__copy"><p class="eyebrow">Momento {moment.number}</p><h3>{moment.title}</h3><p>{moment.text}</p></div>
-            <figure class="how-moment__capture"><picture><source media="(max-width: 42rem)" srcset={moment.mobile} /><img src={moment.desktop} loading={moment.number === '01' ? 'eager' : 'lazy'} fetchpriority={moment.number === '01' ? 'high' : 'auto'} decoding="async" alt={moment.alt} /></picture><figcaption>Captura auténtica de Bilancio · datos sintéticos</figcaption></figure>
+            <figure class="how-moment__capture"><picture><source media="(max-width: 42rem)" srcset={moment.mobile} width={moment.mobileWidth} height={moment.mobileHeight} /><img src={moment.desktop} width={moment.width} height={moment.height} loading={moment.number === '01' ? 'eager' : 'lazy'} fetchpriority={moment.number === '01' ? 'high' : 'auto'} decoding="async" alt={moment.alt} /></picture><figcaption>Captura auténtica de Bilancio · datos sintéticos</figcaption></figure>
           </article>
         ))}
       </div>
