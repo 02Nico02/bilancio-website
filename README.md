@@ -14,11 +14,11 @@ La website no gestiona autenticación ni datos financieros privados y no requier
 
 ## Tecnología prevista
 
-Astro 7, TypeScript y CSS nativo con generación estática. Cloudflare Pages es el destino previsto; la infraestructura todavía no está configurada desde este repositorio.
+Astro 7, TypeScript y CSS nativo con generación estática. Cloudflare Pages publica el sitio; el proyecto se despliega desde `main` y los pull requests generan previews mediante la integración existente de Cloudflare Pages.
 
 ## Estado
 
-Las cuatro páginas comerciales públicas están implementadas. Sus demostraciones financieras son ilustraciones conceptuales con datos sintéticos, aptas para V1; los recursos auténticos del producto son una mejora posterior. La configuración efectiva de publicación debe verificarse antes del lanzamiento.
+Las cuatro páginas comerciales públicas están implementadas y las demostraciones principales usan capturas auténticas de Angular con datos sintéticos. No representan información financiera real.
 
 ## Desarrollo local
 
@@ -38,10 +38,15 @@ Los comandos de calidad y build son:
 ```bash
 npm run check
 npm run build
+npm run check:static
 npm run preview
 ```
 
-`preview` sirve localmente el build ya generado. `check` ejecuta `astro check` para diagnósticos de componentes Astro y TypeScript. No hay linter ni suite E2E configurados: esta base pequeña se valida con el check, el build y revisión manual.
+`check` ejecuta `astro check` para diagnósticos de componentes Astro y TypeScript. `check:static` inspecciona el HTML en `dist/`: rutas, títulos, descripciones, canonical, sitemap, robots, 404, enlaces internos, CTA de autenticación y recursos locales. Ejecutá `npm run build` antes de `npm run check:static`; para validar una copia de prueba podés definir `STATIC_SITE_DIST`.
+
+GitHub Actions ejecuta `npm ci`, `npm run check`, `npm run build` y `npm run check:static` en pull requests dirigidos a `develop` o `main`. El workflow sólo valida; no despliega ni modifica infraestructura.
+
+Estos checks no comprueban el status HTTP del hosting, navegación en navegador, layout responsive, accesibilidad completa ni enlaces externos remotos. El archivo `404.html` se comprueba por su metadato `noindex`; la respuesta HTTP 404 requiere una prueba en hosting/preview.
 
 ## Estructura
 
@@ -58,11 +63,13 @@ Las fuentes Newsreader y Plus Jakarta Sans se incluyen localmente mediante paque
 
 El logo fuente (`bilancio-frontend/public/logo-bilancio.png`) y el favicon (`bilancio-frontend/public/favicon.ico`) se reutilizan en este sitio; Angular también emplea el logo verde en su shell. El repositorio Angular conserva además una variante celeste en `src/assets/images/`, que el shell actual no usa y que no se copió. La copia del logo elegido está en `src/assets/brand/logo-bilancio.png` y se transforma a WebP durante el build mediante `astro:assets`; el favicon está en `public/favicon.ico`. No se encontró una licencia o atribución separada para esos archivos. Su origen queda atribuido al [repositorio bilancio-frontend](https://github.com/02Nico02/bilancio-frontend/tree/main/public), y el código fuente de cada repositorio mantiene builds independientes.
 
-## Build y hosting previsto
+## Build y hosting
 
-`npm run build` genera el sitio estático en `dist/`. Para Cloudflare Pages, los valores previstos son comando `npm run build` y directorio `dist`; no hay proyecto, workflow, credenciales ni deployment configurados en este repositorio.
+`npm run build` genera el sitio estático en `dist/`. Cloudflare Pages usa `npm run build` y `dist`; los despliegues son gestionados por Cloudflare Pages, fuera del workflow de validación de este repositorio.
 
 ## Documentación
 
 - [AGENTS.md](AGENTS.md): convenciones y router contextual para agentes.
 - [Índice documental](docs/README.md): fuentes de verdad y navegación de la documentación.
+
+La captura del hero procede del escenario sintético `showcase:home` de [frontend #420](https://github.com/02Nico02/bilancio-frontend/pull/426). La versión de escritorio recorta el panel completo de flujo mensual; la móvil conserva la captura completa. Ambas se convierten a WebP sin pérdida y mantienen ARS y USD separados.
